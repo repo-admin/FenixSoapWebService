@@ -1,0 +1,29 @@
+﻿objednávka z Helios dat (8.8.2014)
+
+<?xml version="1.0" encoding="UTF-8"?>
+<NewDataSet xmlns="http://www.w3.org/2001/XMLSchema">
+  <CommunicationMessagesReceptionConfirmation>
+    <ID>4948</ID>
+    <MessageID>01000000027</MessageID>
+    <MessageTypeID>2</MessageTypeID>
+    <MessageTypeDescription>ReceptionConfirmation</MessageTypeDescription>
+    <MessageDateOfReceipt>2014-08-08</MessageDateOfReceipt>
+    <ReceptionOrderID>1</ReceptionOrderID>
+    <HeliosOrderID>135201</HeliosOrderID>
+    <ItemSupplierID>10</ItemSupplierID>
+    <ItemSupplierDescription>LICA servis s.r.o.</ItemSupplierDescription>
+    <items>
+      <item>
+        <HeliosOrderRecordID>555422</HeliosOrderRecordID>
+        <ItemID>3240</ItemID>
+        <ItemDescription>kompletace  Kaon KCF-SA700PCO HD-HDD USB READY</ItemDescription>
+        <ItemQuantity>5454.000</ItemQuantity>
+        <ItemUnitOfMeasureID>1</ItemUnitOfMeasureID>
+        <ItemUnitOfMeasure>KS</ItemUnitOfMeasure>
+        <ItemQualityID>1</ItemQualityID>
+        <ItemQuality>NEW</ItemQuality>
+      </item>
+    </items>
+  </CommunicationMessagesReceptionConfirmation>
+</NewDataSet>
+

@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="https://ws8websecapp.upc.cz/FenixAppService" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="FenixAppSvc" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="https://ws8websecapp.upc.cz/FenixAppService" location="" />
+  <wsdl:types />
+  <wsdl:binding name="BasicHttpBinding_IFenixAppSvc" type="i0:IFenixAppSvc">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AppLogWriteNew">
+      <soap:operation soapAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/AppLogWriteNew" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:IFenixAppSvc_AppLogWriteNew_InputMessage_Headers" part="AuthToken" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:header message="i0:IFenixAppSvc_AppLogWriteNew_OutputMessage_Headers" part="ActionResult" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AppLogWriteInfo">
+      <soap:operation soapAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/AppLogWriteInfo" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:IFenixAppSvc_AppLogWriteInfo_InputMessage_Headers" part="AuthToken" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:header message="i0:IFenixAppSvc_AppLogWriteInfo_OutputMessage_Headers" part="ActionResult" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AppLogWriteWarning">
+      <soap:operation soapAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/AppLogWriteWarning" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:IFenixAppSvc_AppLogWriteWarning_InputMessage_Headers" part="AuthToken" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:header message="i0:IFenixAppSvc_AppLogWriteWarning_OutputMessage_Headers" part="ActionResult" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AppLogWriteError">
+      <soap:operation soapAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/AppLogWriteError" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:IFenixAppSvc_AppLogWriteError_InputMessage_Headers" part="AuthToken" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:header message="i0:IFenixAppSvc_AppLogWriteError_OutputMessage_Headers" part="ActionResult" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AppLogWriteXml">
+      <soap:operation soapAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/AppLogWriteXml" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:IFenixAppSvc_AppLogWriteXml_InputMessage_Headers" part="AuthToken" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:header message="i0:IFenixAppSvc_AppLogWriteXml_OutputMessage_Headers" part="ActionResult" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceptionConfirmationProcess">
+      <soap:operation soapAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/ReceptionConfirmationProcess" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:IFenixAppSvc_ReceptionConfirmationProcess_InputMessage_Headers" part="AuthToken" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:header message="i0:IFenixAppSvc_ReceptionConfirmationProcess_OutputMessage_Headers" part="ActionResult" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KittingConfirmationProcess">
+      <soap:operation soapAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/KittingConfirmationProcess" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:IFenixAppSvc_KittingConfirmationProcess_InputMessage_Headers" part="AuthToken" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:header message="i0:IFenixAppSvc_KittingConfirmationProcess_OutputMessage_Headers" part="ActionResult" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShipmentConfirmationProcess">
+      <soap:operation soapAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/ShipmentConfirmationProcess" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:IFenixAppSvc_ShipmentConfirmationProcess_InputMessage_Headers" part="AuthToken" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:header message="i0:IFenixAppSvc_ShipmentConfirmationProcess_OutputMessage_Headers" part="ActionResult" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnedEquipmentProcess">
+      <soap:operation soapAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/ReturnedEquipmentProcess" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:IFenixAppSvc_ReturnedEquipmentProcess_InputMessage_Headers" part="AuthToken" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:header message="i0:IFenixAppSvc_ReturnedEquipmentProcess_OutputMessage_Headers" part="ActionResult" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnedItemProcess">
+      <soap:operation soapAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/ReturnedItemProcess" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:IFenixAppSvc_ReturnedItemProcess_InputMessage_Headers" part="AuthToken" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:header message="i0:IFenixAppSvc_ReturnedItemProcess_OutputMessage_Headers" part="ActionResult" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnedShipmentProcess">
+      <soap:operation soapAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/ReturnedShipmentProcess" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:IFenixAppSvc_ReturnedShipmentProcess_InputMessage_Headers" part="AuthToken" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:header message="i0:IFenixAppSvc_ReturnedShipmentProcess_OutputMessage_Headers" part="ActionResult" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefurbishedConfirmationProcess">
+      <soap:operation soapAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/RefurbishedConfirmationProcess" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:IFenixAppSvc_RefurbishedConfirmationProcess_InputMessage_Headers" part="AuthToken" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:header message="i0:IFenixAppSvc_RefurbishedConfirmationProcess_OutputMessage_Headers" part="ActionResult" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServicesStatuses">
+      <soap:operation soapAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/GetServicesStatuses" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:IFenixAppSvc_GetServicesStatuses_InputMessage_Headers" part="AuthToken" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:header message="i0:IFenixAppSvc_GetServicesStatuses_OutputMessage_Headers" part="ActionResult" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMessageConfirmationProcess">
+      <soap:operation soapAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/DeleteMessageConfirmationProcess" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:IFenixAppSvc_DeleteMessageConfirmationProcess_InputMessage_Headers" part="AuthToken" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:header message="i0:IFenixAppSvc_DeleteMessageConfirmationProcess_OutputMessage_Headers" part="ActionResult" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrmOrderConfirmationProcess">
+      <soap:operation soapAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/CrmOrderConfirmationProcess" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:IFenixAppSvc_CrmOrderConfirmationProcess_InputMessage_Headers" part="AuthToken" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:header message="i0:IFenixAppSvc_CrmOrderConfirmationProcess_OutputMessage_Headers" part="ActionResult" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrmOrderApprovalProcess">
+      <soap:operation soapAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/CrmOrderApprovalProcess" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:IFenixAppSvc_CrmOrderApprovalProcess_InputMessage_Headers" part="AuthToken" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:header message="i0:IFenixAppSvc_CrmOrderApprovalProcess_OutputMessage_Headers" part="ActionResult" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FenixAppSvc">
+    <wsdl:port name="BasicHttpBinding_IFenixAppSvc" binding="tns:BasicHttpBinding_IFenixAppSvc">
+      <soap:address location="http://localhost:8734/FenixAppService/FenixAppSvc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

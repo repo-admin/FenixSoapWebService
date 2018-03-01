@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="https://ws8websecapp.upc.cz/FenixAppService" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="https://ws8websecapp.upc.cz/FenixAppService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="https://ws8websecapp.upc.cz/FenixAppService/Imports">
+      <xsd:import namespace="https://ws8websecapp.upc.cz/FenixAppService" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IFenixAppSvc_AppLogWriteNew_InputMessage">
+    <wsdl:part name="parameters" element="tns:AppLogWriteNew" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_AppLogWriteNew_InputMessage_Headers">
+    <wsdl:part name="AuthToken" element="tns:AuthToken" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_AppLogWriteNew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AppLogWriteNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_AppLogWriteNew_OutputMessage_Headers">
+    <wsdl:part name="ActionResult" element="tns:ActionResult" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_AppLogWriteInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:AppLogWriteInfo" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_AppLogWriteInfo_InputMessage_Headers">
+    <wsdl:part name="AuthToken" element="tns:AuthToken" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_AppLogWriteInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AppLogWriteInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_AppLogWriteInfo_OutputMessage_Headers">
+    <wsdl:part name="ActionResult" element="tns:ActionResult" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_AppLogWriteWarning_InputMessage">
+    <wsdl:part name="parameters" element="tns:AppLogWriteWarning" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_AppLogWriteWarning_InputMessage_Headers">
+    <wsdl:part name="AuthToken" element="tns:AuthToken" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_AppLogWriteWarning_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AppLogWriteWarningResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_AppLogWriteWarning_OutputMessage_Headers">
+    <wsdl:part name="ActionResult" element="tns:ActionResult" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_AppLogWriteError_InputMessage">
+    <wsdl:part name="parameters" element="tns:AppLogWriteError" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_AppLogWriteError_InputMessage_Headers">
+    <wsdl:part name="AuthToken" element="tns:AuthToken" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_AppLogWriteError_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AppLogWriteErrorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_AppLogWriteError_OutputMessage_Headers">
+    <wsdl:part name="ActionResult" element="tns:ActionResult" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_AppLogWriteXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:AppLogWriteXml" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_AppLogWriteXml_InputMessage_Headers">
+    <wsdl:part name="AuthToken" element="tns:AuthToken" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_AppLogWriteXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AppLogWriteXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_AppLogWriteXml_OutputMessage_Headers">
+    <wsdl:part name="ActionResult" element="tns:ActionResult" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_ReceptionConfirmationProcess_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReceptionConfirmationProcess" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_ReceptionConfirmationProcess_InputMessage_Headers">
+    <wsdl:part name="AuthToken" element="tns:AuthToken" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_ReceptionConfirmationProcess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReceptionConfirmationProcessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_ReceptionConfirmationProcess_OutputMessage_Headers">
+    <wsdl:part name="ActionResult" element="tns:ActionResult" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_KittingConfirmationProcess_InputMessage">
+    <wsdl:part name="parameters" element="tns:KittingConfirmationProcess" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_KittingConfirmationProcess_InputMessage_Headers">
+    <wsdl:part name="AuthToken" element="tns:AuthToken" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_KittingConfirmationProcess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:KittingConfirmationProcessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_KittingConfirmationProcess_OutputMessage_Headers">
+    <wsdl:part name="ActionResult" element="tns:ActionResult" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_ShipmentConfirmationProcess_InputMessage">
+    <wsdl:part name="parameters" element="tns:ShipmentConfirmationProcess" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_ShipmentConfirmationProcess_InputMessage_Headers">
+    <wsdl:part name="AuthToken" element="tns:AuthToken" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_ShipmentConfirmationProcess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ShipmentConfirmationProcessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_ShipmentConfirmationProcess_OutputMessage_Headers">
+    <wsdl:part name="ActionResult" element="tns:ActionResult" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_ReturnedEquipmentProcess_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnedEquipmentProcess" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_ReturnedEquipmentProcess_InputMessage_Headers">
+    <wsdl:part name="AuthToken" element="tns:AuthToken" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_ReturnedEquipmentProcess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnedEquipmentProcessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_ReturnedEquipmentProcess_OutputMessage_Headers">
+    <wsdl:part name="ActionResult" element="tns:ActionResult" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_ReturnedItemProcess_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnedItemProcess" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_ReturnedItemProcess_InputMessage_Headers">
+    <wsdl:part name="AuthToken" element="tns:AuthToken" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_ReturnedItemProcess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnedItemProcessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_ReturnedItemProcess_OutputMessage_Headers">
+    <wsdl:part name="ActionResult" element="tns:ActionResult" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_ReturnedShipmentProcess_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnedShipmentProcess" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_ReturnedShipmentProcess_InputMessage_Headers">
+    <wsdl:part name="AuthToken" element="tns:AuthToken" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_ReturnedShipmentProcess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnedShipmentProcessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_ReturnedShipmentProcess_OutputMessage_Headers">
+    <wsdl:part name="ActionResult" element="tns:ActionResult" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_RefurbishedConfirmationProcess_InputMessage">
+    <wsdl:part name="parameters" element="tns:RefurbishedConfirmationProcess" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_RefurbishedConfirmationProcess_InputMessage_Headers">
+    <wsdl:part name="AuthToken" element="tns:AuthToken" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_RefurbishedConfirmationProcess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RefurbishedConfirmationProcessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_RefurbishedConfirmationProcess_OutputMessage_Headers">
+    <wsdl:part name="ActionResult" element="tns:ActionResult" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_GetServicesStatuses_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServicesStatuses" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_GetServicesStatuses_InputMessage_Headers">
+    <wsdl:part name="AuthToken" element="tns:AuthToken" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_GetServicesStatuses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServicesStatusesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_GetServicesStatuses_OutputMessage_Headers">
+    <wsdl:part name="ActionResult" element="tns:ActionResult" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_DeleteMessageConfirmationProcess_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMessageConfirmationProcess" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_DeleteMessageConfirmationProcess_InputMessage_Headers">
+    <wsdl:part name="AuthToken" element="tns:AuthToken" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_DeleteMessageConfirmationProcess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMessageConfirmationProcessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_DeleteMessageConfirmationProcess_OutputMessage_Headers">
+    <wsdl:part name="ActionResult" element="tns:ActionResult" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_CrmOrderConfirmationProcess_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrmOrderConfirmationProcess" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_CrmOrderConfirmationProcess_InputMessage_Headers">
+    <wsdl:part name="AuthToken" element="tns:AuthToken" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_CrmOrderConfirmationProcess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrmOrderConfirmationProcessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_CrmOrderConfirmationProcess_OutputMessage_Headers">
+    <wsdl:part name="ActionResult" element="tns:ActionResult" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_CrmOrderApprovalProcess_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrmOrderApprovalProcess" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_CrmOrderApprovalProcess_InputMessage_Headers">
+    <wsdl:part name="AuthToken" element="tns:AuthToken" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_CrmOrderApprovalProcess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrmOrderApprovalProcessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFenixAppSvc_CrmOrderApprovalProcess_OutputMessage_Headers">
+    <wsdl:part name="ActionResult" element="tns:ActionResult" />
+  </wsdl:message>
+  <wsdl:portType name="IFenixAppSvc">
+    <wsdl:documentation>&lt;summary&gt;Fenix aplikační služba- rozhraní&lt;/summary&gt;</wsdl:documentation>
+    <wsdl:operation name="AppLogWriteNew">
+      <wsdl:documentation>&lt;summary&gt;obecný zápis do logu&lt;/summary&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/AppLogWriteNew" message="tns:IFenixAppSvc_AppLogWriteNew_InputMessage" />
+      <wsdl:output wsaw:Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/AppLogWriteNewResponse" message="tns:IFenixAppSvc_AppLogWriteNew_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AppLogWriteInfo">
+      <wsdl:documentation>&lt;summary&gt;zápis do logu typu INFO&lt;/summary&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/AppLogWriteInfo" message="tns:IFenixAppSvc_AppLogWriteInfo_InputMessage" />
+      <wsdl:output wsaw:Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/AppLogWriteInfoResponse" message="tns:IFenixAppSvc_AppLogWriteInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AppLogWriteWarning">
+      <wsdl:documentation>&lt;summary&gt;zápis do logu typu WARNING&lt;/summary&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/AppLogWriteWarning" message="tns:IFenixAppSvc_AppLogWriteWarning_InputMessage" />
+      <wsdl:output wsaw:Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/AppLogWriteWarningResponse" message="tns:IFenixAppSvc_AppLogWriteWarning_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AppLogWriteError">
+      <wsdl:documentation>&lt;summary&gt;zápis do logu typu ERROR&lt;/summary&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/AppLogWriteError" message="tns:IFenixAppSvc_AppLogWriteError_InputMessage" />
+      <wsdl:output wsaw:Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/AppLogWriteErrorResponse" message="tns:IFenixAppSvc_AppLogWriteError_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AppLogWriteXml">
+      <wsdl:documentation>&lt;summary&gt;zápis do logu typu XML&lt;/summary&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/AppLogWriteXml" message="tns:IFenixAppSvc_AppLogWriteXml_InputMessage" />
+      <wsdl:output wsaw:Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/AppLogWriteXmlResponse" message="tns:IFenixAppSvc_AppLogWriteXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReceptionConfirmationProcess">
+      <wsdl:documentation>&lt;summary&gt;zpracování potrvzení recepce&lt;/summary&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/ReceptionConfirmationProcess" message="tns:IFenixAppSvc_ReceptionConfirmationProcess_InputMessage" />
+      <wsdl:output wsaw:Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/ReceptionConfirmationProcessResponse" message="tns:IFenixAppSvc_ReceptionConfirmationProcess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="KittingConfirmationProcess">
+      <wsdl:documentation>&lt;summary&gt;zpracování potrvzení kittingu&lt;/summary&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/KittingConfirmationProcess" message="tns:IFenixAppSvc_KittingConfirmationProcess_InputMessage" />
+      <wsdl:output wsaw:Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/KittingConfirmationProcessResponse" message="tns:IFenixAppSvc_KittingConfirmationProcess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ShipmentConfirmationProcess">
+      <wsdl:documentation>&lt;summary&gt;zpracování potrvzení závozu/expedice&lt;/summary&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/ShipmentConfirmationProcess" message="tns:IFenixAppSvc_ShipmentConfirmationProcess_InputMessage" />
+      <wsdl:output wsaw:Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/ShipmentConfirmationProcessResponse" message="tns:IFenixAppSvc_ShipmentConfirmationProcess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnedEquipmentProcess">
+      <wsdl:documentation>&lt;summary&gt;zpracování vratek (vrácené zařízení)&lt;/summary&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/ReturnedEquipmentProcess" message="tns:IFenixAppSvc_ReturnedEquipmentProcess_InputMessage" />
+      <wsdl:output wsaw:Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/ReturnedEquipmentProcessResponse" message="tns:IFenixAppSvc_ReturnedEquipmentProcess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnedItemProcess">
+      <wsdl:documentation>&lt;summary&gt;zpracování vratek (vrácené itemy)&lt;/summary&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/ReturnedItemProcess" message="tns:IFenixAppSvc_ReturnedItemProcess_InputMessage" />
+      <wsdl:output wsaw:Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/ReturnedItemProcessResponse" message="tns:IFenixAppSvc_ReturnedItemProcess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnedShipmentProcess">
+      <wsdl:documentation>&lt;summary&gt;zpracování vratek (závoz na repasi CPE)&lt;/summary&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/ReturnedShipmentProcess" message="tns:IFenixAppSvc_ReturnedShipmentProcess_InputMessage" />
+      <wsdl:output wsaw:Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/ReturnedShipmentProcessResponse" message="tns:IFenixAppSvc_ReturnedShipmentProcess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RefurbishedConfirmationProcess">
+      <wsdl:documentation>&lt;summary&gt;Repase - potvrzení naskladnění repasovaného zboží - RefurbishedConfirmation  (message RF1)&lt;/summary&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/RefurbishedConfirmationProcess" message="tns:IFenixAppSvc_RefurbishedConfirmationProcess_InputMessage" />
+      <wsdl:output wsaw:Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/RefurbishedConfirmationProcessResponse" message="tns:IFenixAppSvc_RefurbishedConfirmationProcess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServicesStatuses">
+      <wsdl:documentation>&lt;summary&gt;Zjištění stavu FenixSoapService, FenixAppService a FenixAutomat&lt;/summary&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/GetServicesStatuses" message="tns:IFenixAppSvc_GetServicesStatuses_InputMessage" />
+      <wsdl:output wsaw:Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/GetServicesStatusesResponse" message="tns:IFenixAppSvc_GetServicesStatuses_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMessageConfirmationProcess">
+      <wsdl:documentation>&lt;summary&gt;Delete Message - zrušení zprávy  (message D1)&lt;/summary&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/DeleteMessageConfirmationProcess" message="tns:IFenixAppSvc_DeleteMessageConfirmationProcess_InputMessage" />
+      <wsdl:output wsaw:Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/DeleteMessageConfirmationProcessResponse" message="tns:IFenixAppSvc_DeleteMessageConfirmationProcess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrmOrderConfirmationProcess">
+      <wsdl:documentation>&lt;summary&gt;Crm objednávka - potvrzení  (message C1)&lt;/summary&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/CrmOrderConfirmationProcess" message="tns:IFenixAppSvc_CrmOrderConfirmationProcess_InputMessage" />
+      <wsdl:output wsaw:Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/CrmOrderConfirmationProcessResponse" message="tns:IFenixAppSvc_CrmOrderConfirmationProcess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrmOrderApprovalProcess">
+      <wsdl:documentation>&lt;summary&gt;Crm objednávka - odsouhlasení (message C2)&lt;/summary&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/CrmOrderApprovalProcess" message="tns:IFenixAppSvc_CrmOrderApprovalProcess_InputMessage" />
+      <wsdl:output wsaw:Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/CrmOrderApprovalProcessResponse" message="tns:IFenixAppSvc_CrmOrderApprovalProcess_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

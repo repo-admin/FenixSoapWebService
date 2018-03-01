@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="https://ws8websecapp.upc.cz/FenixAppService" elementFormDefault="qualified" targetNamespace="https://ws8websecapp.upc.cz/FenixAppService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="AppLogWriteNew">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmlDeclaration" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmlMessage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="zicyzUserId" type="xs:int" />
+        <xs:element minOccurs="0" name="source" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="AuthToken">
+    <xs:annotation>
+      <xs:appinfo />
+      <xs:documentation>&lt;summary&gt;Autentifikační token.&lt;/summary&gt;</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;Hodnota tokenu zakódována v base-64.&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AuthToken" nillable="true" type="tns:AuthToken" />
+  <xs:element name="AppLogWriteNewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AppLogWriteNewResult" nillable="true" type="tns:ProcResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ProcResult">
+    <xs:annotation>
+      <xs:appinfo />
+      <xs:documentation>&lt;summary&gt;Výsledek akce procedury.&lt;/summary&gt;</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ReturnMessage" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReturnValue" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProcResult" nillable="true" type="tns:ProcResult" />
+  <xs:complexType name="ActionResult">
+    <xs:annotation>
+      <xs:appinfo />
+      <xs:documentation>&lt;summary&gt;Výsledek akce.&lt;/summary&gt;</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="StatusDesc" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;Popis statusu.&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="StatusId" type="xs:short">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;ID statusu: 0 - nezdar, 1 - úspěch, 2 - neplatný token, 3 - neoprávněný přístup.&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ActionResult" nillable="true" type="tns:ActionResult" />
+  <xs:element name="AppLogWriteInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="zicyzUserId" type="xs:int" />
+        <xs:element minOccurs="0" name="source" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AppLogWriteInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AppLogWriteInfoResult" nillable="true" type="tns:ProcResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AppLogWriteWarning">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="zicyzUserId" type="xs:int" />
+        <xs:element minOccurs="0" name="source" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AppLogWriteWarningResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AppLogWriteWarningResult" nillable="true" type="tns:ProcResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AppLogWriteError">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="zicyzUserId" type="xs:int" />
+        <xs:element minOccurs="0" name="source" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AppLogWriteErrorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AppLogWriteErrorResult" nillable="true" type="tns:ProcResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AppLogWriteXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmlDeclaration" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmlMessage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="zicyzUserId" type="xs:int" />
+        <xs:element minOccurs="0" name="source" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AppLogWriteXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AppLogWriteXmlResult" nillable="true" type="tns:ProcResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReceptionConfirmationProcess">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlMessage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="zicyzUserId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReceptionConfirmationProcessResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ReceptionConfirmationProcessResult" nillable="true" type="tns:ProcResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="KittingConfirmationProcess">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlMessage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="zicyzUserId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="KittingConfirmationProcessResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="KittingConfirmationProcessResult" nillable="true" type="tns:ProcResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ShipmentConfirmationProcess">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlMessage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="zicyzUserId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ShipmentConfirmationProcessResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ShipmentConfirmationProcessResult" nillable="true" type="tns:ProcResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReturnedEquipmentProcess">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlMessage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="zicyzUserId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReturnedEquipmentProcessResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ReturnedEquipmentProcessResult" nillable="true" type="tns:ProcResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReturnedItemProcess">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlMessage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="zicyzUserId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReturnedItemProcessResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ReturnedItemProcessResult" nillable="true" type="tns:ProcResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReturnedShipmentProcess">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlMessage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="zicyzUserId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReturnedShipmentProcessResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ReturnedShipmentProcessResult" nillable="true" type="tns:ProcResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RefurbishedConfirmationProcess">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlMessage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="zicyzUserId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RefurbishedConfirmationProcessResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RefurbishedConfirmationProcessResult" nillable="true" type="tns:ProcResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServicesStatuses">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="zicyzUserId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServicesStatusesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetServicesStatusesResult" nillable="true" type="tns:ProcResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMessageConfirmationProcess">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlMessage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="zicyzUserId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMessageConfirmationProcessResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteMessageConfirmationProcessResult" nillable="true" type="tns:ProcResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrmOrderConfirmationProcess">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlMessage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="zicyzUserId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrmOrderConfirmationProcessResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CrmOrderConfirmationProcessResult" nillable="true" type="tns:ProcResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrmOrderApprovalProcess">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlMessage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="zicyzUserId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrmOrderApprovalProcessResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CrmOrderApprovalProcessResult" nillable="true" type="tns:ProcResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
