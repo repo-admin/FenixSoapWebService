@@ -1,17 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Web;
 using System.Web.Services;
-using System.Xml.Linq;
-using AuthService;
-using FenixHelper;
-using FenixSoapWebService.FenixAppService;
-using FenixSoapWebService.Manually;
-using FenixSoapWebService.Processing;
+using Fenix.WebService.Manually;
+using Fenix.WebService.Processing;
 
-namespace FenixSoapWebService
+namespace Fenix.WebService
 {
 	public class SubmitDataToProcessingResult
 	{
@@ -66,9 +60,9 @@ namespace FenixSoapWebService
 			
 			try
 			{
-				AuthService.AuthResult authRes;
-				AuthService.AuthSvcClient authProxy = new AuthService.AuthSvcClient();
-				AuthService.AuthToken authToken = authProxy.Login(login, password, "", out authRes);
+				AuthResult authRes;
+				AuthSvcClient authProxy = new AuthSvcClient();
+				AuthToken authToken = authProxy.Login(login, password, "", out authRes);
 				authProxy.Close();
 
 				if (authToken != null)
@@ -185,23 +179,23 @@ namespace FenixSoapWebService
 
 			try
 			{
-				AuthService.AuthResult authRes;
-				AuthService.AuthSvcClient authProxy = new AuthService.AuthSvcClient();
-				AuthService.AuthToken authToken = authProxy.Login(login, password, "", out authRes);
+				AuthResult authRes;
+				AuthSvcClient authProxy = new AuthSvcClient();
+				AuthToken authToken = authProxy.Login(login, password, "", out authRes);
 				authProxy.Close();
 
 				if (authToken != null)
 				{
-					result = doProcessing(login, password, partnerCode, messageType, data, encoding, result, authToken);
+					result = ProcessData(login, password, partnerCode, messageType, data, encoding, result, authToken);
 				}
 				else
 				{
-					ProjectHelper.CreateErrorResult(FenixHelper.AppLog.GetMethodName(), ref result, "1", "Invalid login");
+					ProjectHelper.CreateErrorResult(Fenix.ApplicationLog.GetMethodName(), ref result, "1", "Invalid login");
 				}
 			}
 			catch (Exception ex)
 			{
-				ProjectHelper.CreateErrorResult(FenixHelper.AppLog.GetMethodName(), ref result, "100", ex);
+				ProjectHelper.CreateErrorResult(Fenix.ApplicationLog.GetMethodName(), ref result, "100", ex);
 			}
 
 			return result;
@@ -235,9 +229,9 @@ namespace FenixSoapWebService
             }
             
             // authentication
-            AuthService.AuthResult authRes;
-            AuthService.AuthSvcClient authProxy = new AuthService.AuthSvcClient();
-            AuthService.AuthToken authToken = authProxy.Login(login, password, "", out authRes);
+            AuthResult authRes;
+            AuthSvcClient authProxy = new AuthSvcClient();
+            AuthToken authToken = authProxy.Login(login, password, "", out authRes);
             authProxy.Close();
 
             if (authToken != null && result.Errors.Count == 0)
@@ -247,7 +241,7 @@ namespace FenixSoapWebService
             }
             else
             {
-                ProjectHelper.CreateErrorResult(FenixHelper.AppLog.GetMethodName(), ref result, "1", "Invalid login");
+                ProjectHelper.CreateErrorResult(Fenix.ApplicationLog.GetMethodName(), ref result, "1", "Invalid login");
             }
             
             return result;
@@ -269,7 +263,7 @@ namespace FenixSoapWebService
 		/// <param name="result"></param>
 		/// <param name="authToken"></param>
 		/// <returns></returns>
-		private static SubmitDataToProcessingResult doProcessing(string login, string password, string partnerCode, string messageType, byte[] data, string encoding, SubmitDataToProcessingResult result, AuthService.AuthToken authToken)
+		private static SubmitDataToProcessingResult ProcessData(string login, string password, string partnerCode, string messageType, byte[] data, string encoding, SubmitDataToProcessingResult result, AuthToken authToken)
 		{
 			string messageTypeNormalized = messageType.ToUpper().Trim();
 			if (messageTypeNormalized.Contains("TEST"))
@@ -300,25 +294,27 @@ namespace FenixSoapWebService
 					break;
 
 				default:
-					ProjectHelper.CreateErrorResult(FenixHelper.AppLog.GetMethodName(), ref result, "100", String.Format("Unknown messageType = [{0}]", messageType));
+					ProjectHelper.CreateErrorResult(Fenix.ApplicationLog.GetMethodName(), ref result, "100", String.Format("Unknown messageType = [{0}]", messageType));
 					break;
 			}
 
 			return result;
 		}
 
-		/// <summary>
-		/// Základní validace (vyplnění parametrů)
-		/// </summary>
-		/// <param name="partnerCode"></param>
-		/// <param name="messageType"></param>
-		/// <param name="result"></param>
-		/// <returns></returns>
-		private bool baseValidation(string partnerCode, string messageType, byte[] data, string encoding, SubmitDataToProcessingResult result)
+	    /// <summary>
+	    /// Základní validace (vyplnění parametrů)
+	    /// </summary>
+	    /// <param name="partnerCode"></param>
+	    /// <param name="messageType"></param>
+	    /// <param name="encoding"></param>
+	    /// <param name="result"></param>
+	    /// <param name="data"></param>
+	    /// <returns></returns>
+	    private bool baseValidation(string partnerCode, string messageType, byte[] data, string encoding, SubmitDataToProcessingResult result)
 		{
 			if (String.IsNullOrEmpty(partnerCode) || String.IsNullOrEmpty(messageType) || data == null || String.IsNullOrEmpty(encoding))
 			{
-				ProjectHelper.CreateErrorResult(FenixHelper.AppLog.GetMethodName(), ref result, "10", "Invalid input parameter");
+				ProjectHelper.CreateErrorResult(Fenix.ApplicationLog.GetMethodName(), ref result, "10", "Invalid input parameter");
 				return false;
 			}
 			

@@ -1,16 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Web;
-using System.Web.Services;
-using System.Xml.Linq;
-using AuthService;
-using FenixHelper;
-using FenixSoapWebService.FenixAppService;
+using Fenix.WebService.Service_References.FenixAppService;
 
-namespace FenixSoapWebService
+namespace Fenix.WebService
 {
 	/// <summary>
 	/// Pomocná třída projektu
@@ -47,7 +39,7 @@ namespace FenixSoapWebService
 		/// <param name="zicyzUserID"></param>
 		/// <param name="sourceName"></param>
 		/// <returns></returns>
-		public static SubmitDataToProcessingResult AppLogWrite(AuthService.AuthToken authToken, string type, string message, string xmlDeclaration, string xmlMessage, int zicyzUserID, string sourceName)								
+		public static SubmitDataToProcessingResult AppLogWrite(AuthToken authToken, string type, string message, string xmlDeclaration, string xmlMessage, int zicyzUserID, string sourceName)								
 		{
 			SubmitDataToProcessingResult result = new SubmitDataToProcessingResult();
 			
@@ -56,7 +48,7 @@ namespace FenixSoapWebService
 				if (authToken != null)
 				{
 					FenixAppSvcClient appClient = new FenixAppSvcClient();
-					appClient.AuthToken = new FenixAppService.AuthToken() { Value = authToken.Value };										
+					appClient.AuthToken = new Fenix.WebService.Service_References.FenixAppService.AuthToken() { Value = authToken.Value };										
 					ProcResult procResult = appClient.AppLogWriteNew(type, message, xmlDeclaration, xmlMessage, zicyzUserID, sourceName);
 					appClient.Close();
 
@@ -66,13 +58,13 @@ namespace FenixSoapWebService
 					}
 					else
 					{
-						CreateErrorResult(FenixHelper.AppLog.GetMethodName(), ref result, "90", procResult.ReturnMessage);
+						CreateErrorResult(ApplicationLog.GetMethodName(), ref result, "90", procResult.ReturnMessage);
 					}
 				}
 			}
 			catch (Exception ex)
 			{
-				CreateErrorResult(FenixHelper.AppLog.GetMethodName(), ref result, "100", ex);
+				CreateErrorResult(ApplicationLog.GetMethodName(), ref result, "100", ex);
 			}
 
 			return result;

@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
-namespace FenixSoapWebService
+namespace Fenix.WebService.Manually
 {
 	/// <summary>
 	/// Pomocná třída pro testování - ruční vytvoření testovací XML zprávy

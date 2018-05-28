@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Web;
-using System.Web.Services;
-using System.Xml.Linq;
-using System.Xml.Serialization;
-using AuthService;
-using FenixHelper;
-using FenixSoapWebService.FenixAppService;
+using Fenix.Extensions;
+using Fenix.WebService.Service_References.FenixAppService;
+using Fenix.Xml;
 
-namespace FenixSoapWebService
+namespace Fenix.WebService.Processing
 {
 	/// <summary>
 	/// Zpracování potvrzení/oznámení, které přišlo z ND
@@ -24,18 +18,17 @@ namespace FenixSoapWebService
 	/// </summary>
 	public class MessageProcessing
 	{
-		/// <summary>
-		/// Vlastní zpracování XML message
-		/// (zrušení deklarační části, zušení všech jmenných prostorů a volání stored procedure na MS SQL)
-		/// </summary>
-		/// <param name="login"></param>
-		/// <param name="password"></param>
-		/// <param name="partnerCode"></param>
-		/// <param name="messageType"></param>
-		/// <param name="xmlString"></param>
-		/// <param name="encoding"></param>
-		/// <returns></returns>
-		public static SubmitDataToProcessingResult Process(AuthService.AuthToken authToken, string login, string password, string partnerCode, string messageType, byte[] data, string encoding)
+	    /// <summary>
+	    /// Vlastní zpracování XML message (zrušení deklarační části, zušení všech jmenných prostorů a volání stored procedure na MS SQL)
+	    /// </summary>
+	    /// <param name="authToken"></param>
+	    /// <param name="login"></param>
+	    /// <param name="password"></param>
+	    /// <param name="partnerCode"></param>
+	    /// <param name="messageType"></param>
+	    /// <param name="encoding"></param>
+	    /// <returns></returns>
+	    public static SubmitDataToProcessingResult Process(AuthToken authToken, string login, string password, string partnerCode, string messageType, byte[] data, string encoding)
 		{
 			SubmitDataToProcessingResult result = new SubmitDataToProcessingResult();
 			string xmlString = String.Empty;
@@ -45,17 +38,17 @@ namespace FenixSoapWebService
 				if (authToken != null)
 				{
 					xmlString = data.ToString(Encoding.GetEncoding(encoding), Encoding.Unicode);
-					xmlString = prepareXml(xmlString);
+					xmlString = PrepareXml(xmlString);
 
 					result = ProjectHelper.AppLogWrite(authToken, "XML",
 													   ProjectHelper.CreateAppLogMessage(partnerCode, messageType, "modified XML"), "", 
-													   xmlString, BC.ZICYZ_USER_ID, AppLog.GetMethodName());
+													   xmlString, BC.ZICYZ_USER_ID, Fenix.ApplicationLog.GetMethodName());
 
 					if (result.MessageNumber == BC.OK)
 					{
 						FenixAppSvcClient appClient = new FenixAppSvcClient();
-						appClient.AuthToken = new FenixAppService.AuthToken() { Value = authToken.Value };
-						ProcResult procResult = doProcess(appClient, xmlString, messageType);
+						appClient.AuthToken = new Fenix.WebService.Service_References.FenixAppService.AuthToken() { Value = authToken.Value };
+						ProcResult procResult = DoProcess(appClient, xmlString, messageType);
 						appClient.Close();
 												
 						if (procResult.ReturnValue == (int)BC.OK)
@@ -64,23 +57,23 @@ namespace FenixSoapWebService
 						}
 						else
 						{
-							ProjectHelper.CreateErrorResult(FenixHelper.AppLog.GetMethodName(), ref result, "90", procResult.ReturnMessage);
+							ProjectHelper.CreateErrorResult(Fenix.ApplicationLog.GetMethodName(), ref result, "90", procResult.ReturnMessage);
 						}
 					}					
 				}
 			}
 			catch (Exception ex)
 			{
-				ProjectHelper.CreateErrorResult(FenixHelper.AppLog.GetMethodName(), ref result, "100", ex);				
+				ProjectHelper.CreateErrorResult(Fenix.ApplicationLog.GetMethodName(), ref result, "100", ex);				
 				ProjectHelper.AppLogWrite(authToken, "ERROR", 
 					                      String.Format("Během zpracování XML\n{0}\ndošlo k chybě\n{1}", xmlString, ex.Message), 
-										  String.Empty, String.Empty, BC.ZICYZ_USER_ID, AppLog.GetMethodName());				
+										  String.Empty, String.Empty, BC.ZICYZ_USER_ID, Fenix.ApplicationLog.GetMethodName());				
 			}
 
 			return result;
 		}
 
-		private static ProcResult doProcess(FenixAppSvcClient appClient, string xmlString, string messageType)
+		private static ProcResult DoProcess(FenixAppSvcClient appClient, string xmlString, string messageType)
 		{
 			ProcResult procResult = new ProcResult();
 			
@@ -144,7 +137,7 @@ namespace FenixSoapWebService
 		/// </summary>
 		/// <param name="xmlString"></param>
 		/// <returns></returns>
-		private static string prepareXml(string xmlString)
+		private static string PrepareXml(string xmlString)
 		{	
 			string modifiedXmlString = XmlCreator.CreateXMLRootNode(xmlString);
 			return modifiedXmlString;

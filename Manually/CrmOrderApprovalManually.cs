@@ -1,33 +1,31 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
-namespace FenixSoapWebService.Manually
+namespace Fenix.WebService.Manually
 {
 	/// <summary>
 	/// Hardcoded vytvoření odsouhlasení CrmOrder CrmOrderApproval message C2
 	/// </summary>
 	public class CrmOrderApprovalManually
 	{
-		/// <summary>
-		/// Vrací hardcoded XML string pro C2 
-		/// </summary>
-		/// <param name="orderId"></param>
-		/// <returns></returns>
-		public static string GetCrmOrderApproval(int approvalId)
+	    /// <summary>
+	    /// Vrací hardcoded XML string pro C2 
+	    /// </summary>
+	    /// <param name="approvalId"></param>
+	    /// <returns></returns>
+	    public static string GetCrmOrderApproval(int approvalId)
 		{
 			string xmlString = String.Empty;
 
 			switch (approvalId)
 			{
 				case 1:
-					xmlString = approvalId1();
+					xmlString = ApprovalId1();
 					break;
 				case 2:
-					xmlString = approvalId2();
+					xmlString = ApprovalId2();
 					break;
 				default:
+				    xmlString = null;
 					throw new Exception("Neznámé číslo CrmOrder Approval - C2");
 			}
 
@@ -38,7 +36,7 @@ namespace FenixSoapWebService.Manually
 		/// Vlastní vytvoření hardcoded XML stringu C2
 		/// </summary>
 		/// <returns></returns>
-		private static string approvalId1()
+		private static string ApprovalId1()
 		{
 			return		
 			@"<NewDataSet>
@@ -109,7 +107,7 @@ namespace FenixSoapWebService.Manually
 		/// Vlastní vytvoření hardcoded XML stringu C2
 		/// </summary>
 		/// <returns></returns>
-		private static string approvalId2()
+		private static string ApprovalId2()
 		{
 			return
 					@"<NewDataSet>

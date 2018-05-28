@@ -8,24 +8,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AuthService
+using System;
+using System.Runtime.Serialization;
+
+namespace Fenix.WebService
 {
-    using System.Runtime.Serialization;
-    using System;
-    
-    
     /// <summary>Autentifikační token.</summary>
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AuthToken", Namespace="https://ws8websecdb.upc.cz/AuthService")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="AuthToken", Namespace="https://ws8websecdb.upc.cz/AuthService")]
+    [Serializable()]
     public partial class AuthToken : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
     {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ValueField;
         
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
@@ -41,7 +40,7 @@ namespace AuthService
         }
         
         /// <summary>Hodnota tokenu zakódována v base-64.</summary>
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string Value
         {
             get
@@ -73,24 +72,24 @@ namespace AuthService
     /// <summary>Výsledek autentifikace.</summary>
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AuthResult", Namespace="https://ws8websecdb.upc.cz/AuthService")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="AuthResult", Namespace="https://ws8websecdb.upc.cz/AuthService")]
+    [Serializable()]
     public partial class AuthResult : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
     {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AppIdField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string StatusDescField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private short StatusIdField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int UnsuccessfulAttemptsField;
         
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
@@ -106,7 +105,7 @@ namespace AuthService
         }
         
         /// <summary>Aplikační identifikátor.</summary>
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AppId
         {
             get
@@ -124,7 +123,7 @@ namespace AuthService
         }
         
         /// <summary>Popis statusu.</summary>
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string StatusDesc
         {
             get
@@ -142,7 +141,7 @@ namespace AuthService
         }
         
         /// <summary>ID statusu: 0 - proces neúspěšný, 1 - autentifikace úspěšná, 2 - uživatel nenalezen, 3 - nesprávné heslo.</summary>
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public short StatusId
         {
             get
@@ -160,7 +159,7 @@ namespace AuthService
         }
         
         /// <summary>Počet neúspěšných pokusů.</summary>
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int UnsuccessfulAttempts
         {
             get
@@ -192,21 +191,21 @@ namespace AuthService
     /// <summary>Data uživatele.</summary>
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="User", Namespace="https://ws8websecdb.upc.cz/AuthService")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="User", Namespace="https://ws8websecdb.upc.cz/AuthService")]
+    [Serializable()]
     public partial class User : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
     {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AppIdField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string LoginField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string PasswordField;
         
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
@@ -222,7 +221,7 @@ namespace AuthService
         }
         
         /// <summary>Aplikační identifikátor.</summary>
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AppId
         {
             get
@@ -240,7 +239,7 @@ namespace AuthService
         }
         
         /// <summary>Přihlašovací údaj.</summary>
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string Login
         {
             get
@@ -258,7 +257,7 @@ namespace AuthService
         }
         
         /// <summary>Heslo.</summary>
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string Password
         {
             get
@@ -290,18 +289,18 @@ namespace AuthService
     /// <summary>Výsledek registrace.</summary>
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RegResult", Namespace="https://ws8websecdb.upc.cz/AuthService")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="RegResult", Namespace="https://ws8websecdb.upc.cz/AuthService")]
+    [Serializable()]
     public partial class RegResult : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
     {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string StatusDescField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private short StatusIdField;
         
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
@@ -317,7 +316,7 @@ namespace AuthService
         }
         
         /// <summary>Popis statusu.</summary>
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string StatusDesc
         {
             get
@@ -335,7 +334,7 @@ namespace AuthService
         }
         
         /// <summary>ID statusu: 0 - registrace neúspěšná, 1 - úspěšná registrace, 2 - registrace neúspěšná, uživatel již existuje.</summary>
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public short StatusId
         {
             get
@@ -377,10 +376,10 @@ namespace AuthService
         /// <param name="sourceId">Identifikace zdroje, např. IP adresa.</param>
         /// <returns>Výsledek autentifikace.</returns>
         [System.ServiceModel.OperationContractAttribute(Action="https://ws8websecdb.upc.cz/AuthService/IAuthSvc/Login", ReplyAction="https://ws8websecdb.upc.cz/AuthService/IAuthSvc/LoginResponse")]
-        AuthService.LoginResponse Login(AuthService.LoginRequest request);
+        LoginResponse Login(LoginRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="https://ws8websecdb.upc.cz/AuthService/IAuthSvc/Login", ReplyAction="https://ws8websecdb.upc.cz/AuthService/IAuthSvc/LoginResponse")]
-        System.Threading.Tasks.Task<AuthService.LoginResponse> LoginAsync(AuthService.LoginRequest request);
+        System.Threading.Tasks.Task<LoginResponse> LoginAsync(LoginRequest request);
         
         // CODEGEN: Probíhá generování kontraktu zprávy, protože ve zprávě ChangePasswordRequest se nacházejí záhlaví
         /// <summary>Změna hesla.</summary>
@@ -389,20 +388,20 @@ namespace AuthService
         /// <param name="newPwd">Nové heslo.</param>
         /// <returns>True, byla-li změna úspěšná, jinak false.</returns>
         [System.ServiceModel.OperationContractAttribute(Action="https://ws8websecdb.upc.cz/AuthService/IAuthSvc/ChangePassword", ReplyAction="https://ws8websecdb.upc.cz/AuthService/IAuthSvc/ChangePasswordResponse")]
-        AuthService.ChangePasswordResponse ChangePassword(AuthService.ChangePasswordRequest request);
+        ChangePasswordResponse ChangePassword(ChangePasswordRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="https://ws8websecdb.upc.cz/AuthService/IAuthSvc/ChangePassword", ReplyAction="https://ws8websecdb.upc.cz/AuthService/IAuthSvc/ChangePasswordResponse")]
-        System.Threading.Tasks.Task<AuthService.ChangePasswordResponse> ChangePasswordAsync(AuthService.ChangePasswordRequest request);
+        System.Threading.Tasks.Task<ChangePasswordResponse> ChangePasswordAsync(ChangePasswordRequest request);
         
         // CODEGEN: Probíhá generování kontraktu zprávy, protože ve zprávě RegisterResponse se nacházejí záhlaví
         /// <summary>Registace uživatele.</summary>
         /// <param name="user">Data uživatele.</param>
         /// <returns>Výsledek registrace.</returns>
         [System.ServiceModel.OperationContractAttribute(Action="https://ws8websecdb.upc.cz/AuthService/IAuthSvc/Register", ReplyAction="https://ws8websecdb.upc.cz/AuthService/IAuthSvc/RegisterResponse")]
-        AuthService.RegisterResponse Register(AuthService.RegisterRequest request);
+        RegisterResponse Register(RegisterRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="https://ws8websecdb.upc.cz/AuthService/IAuthSvc/Register", ReplyAction="https://ws8websecdb.upc.cz/AuthService/IAuthSvc/RegisterResponse")]
-        System.Threading.Tasks.Task<AuthService.RegisterResponse> RegisterAsync(AuthService.RegisterRequest request);
+        System.Threading.Tasks.Task<RegisterResponse> RegisterAsync(RegisterRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -441,16 +440,16 @@ namespace AuthService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="https://ws8websecdb.upc.cz/AuthService")]
-        public AuthService.AuthToken AuthToken;
+        public AuthToken AuthToken;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://ws8websecdb.upc.cz/AuthService", Order=0)]
-        public AuthService.AuthResult LoginResult;
+        public AuthResult LoginResult;
         
         public LoginResponse()
         {
         }
         
-        public LoginResponse(AuthService.AuthToken AuthToken, AuthService.AuthResult LoginResult)
+        public LoginResponse(AuthToken AuthToken, AuthResult LoginResult)
         {
             this.AuthToken = AuthToken;
             this.LoginResult = LoginResult;
@@ -465,7 +464,7 @@ namespace AuthService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="https://ws8websecdb.upc.cz/AuthService")]
-        public AuthService.AuthToken AuthToken;
+        public AuthToken AuthToken;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://ws8websecdb.upc.cz/AuthService", Order=0)]
         public string loginName;
@@ -480,7 +479,7 @@ namespace AuthService
         {
         }
         
-        public ChangePasswordRequest(AuthService.AuthToken AuthToken, string loginName, string curPwd, string newPwd)
+        public ChangePasswordRequest(AuthToken AuthToken, string loginName, string curPwd, string newPwd)
         {
             this.AuthToken = AuthToken;
             this.loginName = loginName;
@@ -497,7 +496,7 @@ namespace AuthService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="https://ws8websecdb.upc.cz/AuthService")]
-        public AuthService.AuthToken AuthToken;
+        public AuthToken AuthToken;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://ws8websecdb.upc.cz/AuthService", Order=0)]
         public bool ChangePasswordResult;
@@ -506,7 +505,7 @@ namespace AuthService
         {
         }
         
-        public ChangePasswordResponse(AuthService.AuthToken AuthToken, bool ChangePasswordResult)
+        public ChangePasswordResponse(AuthToken AuthToken, bool ChangePasswordResult)
         {
             this.AuthToken = AuthToken;
             this.ChangePasswordResult = ChangePasswordResult;
@@ -521,13 +520,13 @@ namespace AuthService
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://ws8websecdb.upc.cz/AuthService", Order=0)]
-        public AuthService.User user;
+        public User user;
         
         public RegisterRequest()
         {
         }
         
-        public RegisterRequest(AuthService.User user)
+        public RegisterRequest(User user)
         {
             this.user = user;
         }
@@ -541,16 +540,16 @@ namespace AuthService
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="https://ws8websecdb.upc.cz/AuthService")]
-        public AuthService.AuthToken AuthToken;
+        public AuthToken AuthToken;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://ws8websecdb.upc.cz/AuthService", Order=0)]
-        public AuthService.RegResult RegisterResult;
+        public RegResult RegisterResult;
         
         public RegisterResponse()
         {
         }
         
-        public RegisterResponse(AuthService.AuthToken AuthToken, AuthService.RegResult RegisterResult)
+        public RegisterResponse(AuthToken AuthToken, RegResult RegisterResult)
         {
             this.AuthToken = AuthToken;
             this.RegisterResult = RegisterResult;
@@ -558,13 +557,13 @@ namespace AuthService
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IAuthSvcChannel : AuthService.IAuthSvc, System.ServiceModel.IClientChannel
+    public interface IAuthSvcChannel : IAuthSvc, System.ServiceModel.IClientChannel
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class AuthSvcClient : System.ServiceModel.ClientBase<AuthService.IAuthSvc>, AuthService.IAuthSvc
+    public partial class AuthSvcClient : System.ServiceModel.ClientBase<IAuthSvc>, IAuthSvc
     {
         
         public AuthSvcClient()
@@ -592,97 +591,97 @@ namespace AuthService
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        AuthService.LoginResponse AuthService.IAuthSvc.Login(AuthService.LoginRequest request)
+        LoginResponse IAuthSvc.Login(LoginRequest request)
         {
             return base.Channel.Login(request);
         }
         
-        public AuthService.AuthToken Login(string loginName, string password, string sourceId, out AuthService.AuthResult LoginResult)
+        public AuthToken Login(string loginName, string password, string sourceId, out AuthResult LoginResult)
         {
-            AuthService.LoginRequest inValue = new AuthService.LoginRequest();
+            LoginRequest inValue = new LoginRequest();
             inValue.loginName = loginName;
             inValue.password = password;
             inValue.sourceId = sourceId;
-            AuthService.LoginResponse retVal = ((AuthService.IAuthSvc)(this)).Login(inValue);
+            LoginResponse retVal = ((IAuthSvc)(this)).Login(inValue);
             LoginResult = retVal.LoginResult;
             return retVal.AuthToken;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<AuthService.LoginResponse> AuthService.IAuthSvc.LoginAsync(AuthService.LoginRequest request)
+        System.Threading.Tasks.Task<LoginResponse> IAuthSvc.LoginAsync(LoginRequest request)
         {
             return base.Channel.LoginAsync(request);
         }
         
-        public System.Threading.Tasks.Task<AuthService.LoginResponse> LoginAsync(string loginName, string password, string sourceId)
+        public System.Threading.Tasks.Task<LoginResponse> LoginAsync(string loginName, string password, string sourceId)
         {
-            AuthService.LoginRequest inValue = new AuthService.LoginRequest();
+            LoginRequest inValue = new LoginRequest();
             inValue.loginName = loginName;
             inValue.password = password;
             inValue.sourceId = sourceId;
-            return ((AuthService.IAuthSvc)(this)).LoginAsync(inValue);
+            return ((IAuthSvc)(this)).LoginAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        AuthService.ChangePasswordResponse AuthService.IAuthSvc.ChangePassword(AuthService.ChangePasswordRequest request)
+        ChangePasswordResponse IAuthSvc.ChangePassword(ChangePasswordRequest request)
         {
             return base.Channel.ChangePassword(request);
         }
         
-        public bool ChangePassword(ref AuthService.AuthToken AuthToken, string loginName, string curPwd, string newPwd)
+        public bool ChangePassword(ref AuthToken AuthToken, string loginName, string curPwd, string newPwd)
         {
-            AuthService.ChangePasswordRequest inValue = new AuthService.ChangePasswordRequest();
+            ChangePasswordRequest inValue = new ChangePasswordRequest();
             inValue.AuthToken = AuthToken;
             inValue.loginName = loginName;
             inValue.curPwd = curPwd;
             inValue.newPwd = newPwd;
-            AuthService.ChangePasswordResponse retVal = ((AuthService.IAuthSvc)(this)).ChangePassword(inValue);
+            ChangePasswordResponse retVal = ((IAuthSvc)(this)).ChangePassword(inValue);
             AuthToken = retVal.AuthToken;
             return retVal.ChangePasswordResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<AuthService.ChangePasswordResponse> AuthService.IAuthSvc.ChangePasswordAsync(AuthService.ChangePasswordRequest request)
+        System.Threading.Tasks.Task<ChangePasswordResponse> IAuthSvc.ChangePasswordAsync(ChangePasswordRequest request)
         {
             return base.Channel.ChangePasswordAsync(request);
         }
         
-        public System.Threading.Tasks.Task<AuthService.ChangePasswordResponse> ChangePasswordAsync(AuthService.AuthToken AuthToken, string loginName, string curPwd, string newPwd)
+        public System.Threading.Tasks.Task<ChangePasswordResponse> ChangePasswordAsync(AuthToken AuthToken, string loginName, string curPwd, string newPwd)
         {
-            AuthService.ChangePasswordRequest inValue = new AuthService.ChangePasswordRequest();
+            ChangePasswordRequest inValue = new ChangePasswordRequest();
             inValue.AuthToken = AuthToken;
             inValue.loginName = loginName;
             inValue.curPwd = curPwd;
             inValue.newPwd = newPwd;
-            return ((AuthService.IAuthSvc)(this)).ChangePasswordAsync(inValue);
+            return ((IAuthSvc)(this)).ChangePasswordAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        AuthService.RegisterResponse AuthService.IAuthSvc.Register(AuthService.RegisterRequest request)
+        RegisterResponse IAuthSvc.Register(RegisterRequest request)
         {
             return base.Channel.Register(request);
         }
         
-        public AuthService.AuthToken Register(AuthService.User user, out AuthService.RegResult RegisterResult)
+        public AuthToken Register(User user, out RegResult RegisterResult)
         {
-            AuthService.RegisterRequest inValue = new AuthService.RegisterRequest();
+            RegisterRequest inValue = new RegisterRequest();
             inValue.user = user;
-            AuthService.RegisterResponse retVal = ((AuthService.IAuthSvc)(this)).Register(inValue);
+            RegisterResponse retVal = ((IAuthSvc)(this)).Register(inValue);
             RegisterResult = retVal.RegisterResult;
             return retVal.AuthToken;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<AuthService.RegisterResponse> AuthService.IAuthSvc.RegisterAsync(AuthService.RegisterRequest request)
+        System.Threading.Tasks.Task<RegisterResponse> IAuthSvc.RegisterAsync(RegisterRequest request)
         {
             return base.Channel.RegisterAsync(request);
         }
         
-        public System.Threading.Tasks.Task<AuthService.RegisterResponse> RegisterAsync(AuthService.User user)
+        public System.Threading.Tasks.Task<RegisterResponse> RegisterAsync(User user)
         {
-            AuthService.RegisterRequest inValue = new AuthService.RegisterRequest();
+            RegisterRequest inValue = new RegisterRequest();
             inValue.user = user;
-            return ((AuthService.IAuthSvc)(this)).RegisterAsync(inValue);
+            return ((IAuthSvc)(this)).RegisterAsync(inValue);
         }
     }
 }

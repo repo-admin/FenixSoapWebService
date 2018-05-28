@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Web;
-using System.Web.Services;
-using System.Xml.Linq;
-using AuthService;
-using FenixHelper;
-using FenixSoapWebService.FenixAppService;
+using Fenix.Extensions;
+using Fenix.Xml;
 
-namespace FenixSoapWebService
+namespace Fenix.WebService.Processing
 {
 	/// <summary>
 	/// Třída pro zpracování testu  
@@ -27,7 +21,7 @@ namespace FenixSoapWebService
 		/// <param name="data"></param>
 		/// <param name="encoding"></param>
 		/// <returns></returns>
-		public static SubmitDataToProcessingResult Process(AuthService.AuthToken authToken, string login, string password, string partnerCode, string messageType, byte[] data, string encoding)
+		public static SubmitDataToProcessingResult Process(AuthToken authToken, string login, string password, string partnerCode, string messageType, byte[] data, string encoding)
 		{
 			SubmitDataToProcessingResult result = new SubmitDataToProcessingResult();
 
@@ -40,12 +34,12 @@ namespace FenixSoapWebService
 				{
 					return ProjectHelper.AppLogWrite(authToken, "XML",
 													 ProjectHelper.CreateAppLogMessage(partnerCode, messageType, "modified XML"), "", 
-													 modifiedXmlString, BC.ZICYZ_USER_ID, AppLog.GetMethodName());
+													 modifiedXmlString, BC.ZICYZ_USER_ID, ApplicationLog.GetMethodName());
 				}
 			}
 			catch (Exception ex)
 			{
-				ProjectHelper.CreateErrorResult(FenixHelper.AppLog.GetMethodName(), ref result, "100", ex);
+				ProjectHelper.CreateErrorResult(ApplicationLog.GetMethodName(), ref result, "100", ex);
 			}
 
 			return result;

@@ -11,7 +11,7 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FenixSoapWebService</RootNamespace>
+    <RootNamespace>Fenix.WebService</RootNamespace>
     <AssemblyName>FenixSoapWebService</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
@@ -46,7 +46,7 @@
   <ItemGroup>
     <Reference Include="FenixHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\FenixHelper\bin\Debug\FenixHelper.dll</HintPath>
+      <HintPath>..\FenixHelper\obj\Debug\FenixHelper.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Runtime.Serialization" />
@@ -73,14 +73,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="FenixSoapWebSvc.asmx" />
+    <Content Include="Service References\FenixAppService\Fenix.WebService.FenixAppService.ProcResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\FenixAppService\FenixAppService.wsdl" />
     <None Include="Service References\FenixAppService\FenixAppService.xsd">
       <SubType>Designer</SubType>
     </None>
     <Content Include="Odloz.txt" />
-    <Content Include="Service References\FenixAppService\FenixSoapWebService.FenixAppService.ProcResult.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <None Include="Service References\FenixAppService\service.wsdl" />
     <None Include="Service References\FenixAppService\service.xsd">
       <SubType>Designer</SubType>

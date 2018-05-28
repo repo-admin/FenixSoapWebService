@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
-namespace FenixSoapWebService.Manually
+namespace Fenix.WebService.Manually
 {
 	/// <summary>
 	/// Hardcoded vytvoření vratky ze strany ND - message VR3

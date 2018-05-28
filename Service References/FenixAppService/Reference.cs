@@ -8,22 +8,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FenixSoapWebService.FenixAppService {
-    using System.Runtime.Serialization;
-    using System;
-    
-    
+using System;
+using System.Runtime.Serialization;
+
+namespace Fenix.WebService.Service_References.FenixAppService {
     /// <summary>Autentifikační token.</summary>
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AuthToken", Namespace="https://ws8websecapp.upc.cz/FenixAppService")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="AuthToken", Namespace="https://ws8websecapp.upc.cz/FenixAppService")]
+    [Serializable()]
     public partial class AuthToken : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ValueField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -37,7 +36,7 @@ namespace FenixSoapWebService.FenixAppService {
         }
         
         /// <summary>Hodnota tokenu zakódována v base-64.</summary>
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string Value {
             get {
                 return this.ValueField;
@@ -63,17 +62,17 @@ namespace FenixSoapWebService.FenixAppService {
     /// <summary>Výsledek akce.</summary>
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ActionResult", Namespace="https://ws8websecapp.upc.cz/FenixAppService")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="ActionResult", Namespace="https://ws8websecapp.upc.cz/FenixAppService")]
+    [Serializable()]
     public partial class ActionResult : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string StatusDescField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private short StatusIdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -87,7 +86,7 @@ namespace FenixSoapWebService.FenixAppService {
         }
         
         /// <summary>Popis statusu.</summary>
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string StatusDesc {
             get {
                 return this.StatusDescField;
@@ -101,7 +100,7 @@ namespace FenixSoapWebService.FenixAppService {
         }
         
         /// <summary>ID statusu: 0 - nezdar, 1 - úspěch, 2 - neplatný token, 3 - neoprávněný přístup.</summary>
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public short StatusId {
             get {
                 return this.StatusIdField;
@@ -127,14 +126,14 @@ namespace FenixSoapWebService.FenixAppService {
     /// <summary>Výsledek akce procedury.</summary>
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ProcResult", Namespace="https://ws8websecapp.upc.cz/FenixAppService")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="ProcResult", Namespace="https://ws8websecapp.upc.cz/FenixAppService")]
+    [Serializable()]
     public partial class ProcResult : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ReturnMessageField;
         
         private int ReturnValueField;
@@ -150,7 +149,7 @@ namespace FenixSoapWebService.FenixAppService {
         }
         
         /// <summary></summary>
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ReturnMessage {
             get {
                 return this.ReturnMessageField;
@@ -164,7 +163,7 @@ namespace FenixSoapWebService.FenixAppService {
         }
         
         /// <summary></summary>
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public int ReturnValue {
             get {
                 return this.ReturnValueField;
@@ -195,196 +194,196 @@ namespace FenixSoapWebService.FenixAppService {
         
         /// <summary>obecný zápis do logu</summary>
         [System.ServiceModel.OperationContractAttribute(Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/AppLogWriteNew", ReplyAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/AppLogWriteNewResponse")]
-        [WCFExtrasPlus.Soap.SoapHeaderAttribute("AuthToken", typeof(FenixSoapWebService.FenixAppService.AuthToken), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.In)]
-        [WCFExtrasPlus.Soap.SoapHeaderAttribute("ActionResult", typeof(FenixSoapWebService.FenixAppService.ActionResult), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.Out)]
-        FenixSoapWebService.FenixAppService.ProcResult AppLogWriteNew(string type, string message, string xmlDeclaration, string xmlMessage, int zicyzUserId, string source);
+        [WCFExtrasPlus.Soap.SoapHeaderAttribute("AuthToken", typeof(AuthToken), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.In)]
+        [WCFExtrasPlus.Soap.SoapHeaderAttribute("ActionResult", typeof(ActionResult), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.Out)]
+        ProcResult AppLogWriteNew(string type, string message, string xmlDeclaration, string xmlMessage, int zicyzUserId, string source);
         
         [System.ServiceModel.OperationContractAttribute(Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/AppLogWriteNew", ReplyAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/AppLogWriteNewResponse")]
-        System.Threading.Tasks.Task<FenixSoapWebService.FenixAppService.ProcResult> AppLogWriteNewAsync(string type, string message, string xmlDeclaration, string xmlMessage, int zicyzUserId, string source);
+        System.Threading.Tasks.Task<ProcResult> AppLogWriteNewAsync(string type, string message, string xmlDeclaration, string xmlMessage, int zicyzUserId, string source);
         
         /// <summary>zápis do logu typu INFO</summary>
         [System.ServiceModel.OperationContractAttribute(Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/AppLogWriteInfo", ReplyAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/AppLogWriteInfoResponse")]
-        [WCFExtrasPlus.Soap.SoapHeaderAttribute("AuthToken", typeof(FenixSoapWebService.FenixAppService.AuthToken), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.In)]
-        [WCFExtrasPlus.Soap.SoapHeaderAttribute("ActionResult", typeof(FenixSoapWebService.FenixAppService.ActionResult), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.Out)]
-        FenixSoapWebService.FenixAppService.ProcResult AppLogWriteInfo(string message, int zicyzUserId, string source);
+        [WCFExtrasPlus.Soap.SoapHeaderAttribute("AuthToken", typeof(AuthToken), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.In)]
+        [WCFExtrasPlus.Soap.SoapHeaderAttribute("ActionResult", typeof(ActionResult), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.Out)]
+        ProcResult AppLogWriteInfo(string message, int zicyzUserId, string source);
         
         [System.ServiceModel.OperationContractAttribute(Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/AppLogWriteInfo", ReplyAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/AppLogWriteInfoResponse")]
-        System.Threading.Tasks.Task<FenixSoapWebService.FenixAppService.ProcResult> AppLogWriteInfoAsync(string message, int zicyzUserId, string source);
+        System.Threading.Tasks.Task<ProcResult> AppLogWriteInfoAsync(string message, int zicyzUserId, string source);
         
         /// <summary>zápis do logu typu WARNING</summary>
         [System.ServiceModel.OperationContractAttribute(Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/AppLogWriteWarning", ReplyAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/AppLogWriteWarningRespon" +
             "se")]
-        [WCFExtrasPlus.Soap.SoapHeaderAttribute("AuthToken", typeof(FenixSoapWebService.FenixAppService.AuthToken), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.In)]
-        [WCFExtrasPlus.Soap.SoapHeaderAttribute("ActionResult", typeof(FenixSoapWebService.FenixAppService.ActionResult), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.Out)]
-        FenixSoapWebService.FenixAppService.ProcResult AppLogWriteWarning(string message, int zicyzUserId, string source);
+        [WCFExtrasPlus.Soap.SoapHeaderAttribute("AuthToken", typeof(AuthToken), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.In)]
+        [WCFExtrasPlus.Soap.SoapHeaderAttribute("ActionResult", typeof(ActionResult), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.Out)]
+        ProcResult AppLogWriteWarning(string message, int zicyzUserId, string source);
         
         [System.ServiceModel.OperationContractAttribute(Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/AppLogWriteWarning", ReplyAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/AppLogWriteWarningRespon" +
             "se")]
-        System.Threading.Tasks.Task<FenixSoapWebService.FenixAppService.ProcResult> AppLogWriteWarningAsync(string message, int zicyzUserId, string source);
+        System.Threading.Tasks.Task<ProcResult> AppLogWriteWarningAsync(string message, int zicyzUserId, string source);
         
         /// <summary>zápis do logu typu ERROR</summary>
         [System.ServiceModel.OperationContractAttribute(Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/AppLogWriteError", ReplyAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/AppLogWriteErrorResponse" +
             "")]
-        [WCFExtrasPlus.Soap.SoapHeaderAttribute("AuthToken", typeof(FenixSoapWebService.FenixAppService.AuthToken), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.In)]
-        [WCFExtrasPlus.Soap.SoapHeaderAttribute("ActionResult", typeof(FenixSoapWebService.FenixAppService.ActionResult), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.Out)]
-        FenixSoapWebService.FenixAppService.ProcResult AppLogWriteError(string message, int zicyzUserId, string source);
+        [WCFExtrasPlus.Soap.SoapHeaderAttribute("AuthToken", typeof(AuthToken), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.In)]
+        [WCFExtrasPlus.Soap.SoapHeaderAttribute("ActionResult", typeof(ActionResult), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.Out)]
+        ProcResult AppLogWriteError(string message, int zicyzUserId, string source);
         
         [System.ServiceModel.OperationContractAttribute(Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/AppLogWriteError", ReplyAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/AppLogWriteErrorResponse" +
             "")]
-        System.Threading.Tasks.Task<FenixSoapWebService.FenixAppService.ProcResult> AppLogWriteErrorAsync(string message, int zicyzUserId, string source);
+        System.Threading.Tasks.Task<ProcResult> AppLogWriteErrorAsync(string message, int zicyzUserId, string source);
         
         /// <summary>zápis do logu typu XML</summary>
         [System.ServiceModel.OperationContractAttribute(Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/AppLogWriteXml", ReplyAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/AppLogWriteXmlResponse")]
-        [WCFExtrasPlus.Soap.SoapHeaderAttribute("AuthToken", typeof(FenixSoapWebService.FenixAppService.AuthToken), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.In)]
-        [WCFExtrasPlus.Soap.SoapHeaderAttribute("ActionResult", typeof(FenixSoapWebService.FenixAppService.ActionResult), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.Out)]
-        FenixSoapWebService.FenixAppService.ProcResult AppLogWriteXml(string message, string xmlDeclaration, string xmlMessage, int zicyzUserId, string source);
+        [WCFExtrasPlus.Soap.SoapHeaderAttribute("AuthToken", typeof(AuthToken), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.In)]
+        [WCFExtrasPlus.Soap.SoapHeaderAttribute("ActionResult", typeof(ActionResult), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.Out)]
+        ProcResult AppLogWriteXml(string message, string xmlDeclaration, string xmlMessage, int zicyzUserId, string source);
         
         [System.ServiceModel.OperationContractAttribute(Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/AppLogWriteXml", ReplyAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/AppLogWriteXmlResponse")]
-        System.Threading.Tasks.Task<FenixSoapWebService.FenixAppService.ProcResult> AppLogWriteXmlAsync(string message, string xmlDeclaration, string xmlMessage, int zicyzUserId, string source);
+        System.Threading.Tasks.Task<ProcResult> AppLogWriteXmlAsync(string message, string xmlDeclaration, string xmlMessage, int zicyzUserId, string source);
         
         /// <summary>zpracování potrvzení recepce</summary>
         [System.ServiceModel.OperationContractAttribute(Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/ReceptionConfirmationPro" +
             "cess", ReplyAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/ReceptionConfirmationPro" +
             "cessResponse")]
-        [WCFExtrasPlus.Soap.SoapHeaderAttribute("AuthToken", typeof(FenixSoapWebService.FenixAppService.AuthToken), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.In)]
-        [WCFExtrasPlus.Soap.SoapHeaderAttribute("ActionResult", typeof(FenixSoapWebService.FenixAppService.ActionResult), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.Out)]
-        FenixSoapWebService.FenixAppService.ProcResult ReceptionConfirmationProcess(string xmlMessage, int zicyzUserId);
+        [WCFExtrasPlus.Soap.SoapHeaderAttribute("AuthToken", typeof(AuthToken), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.In)]
+        [WCFExtrasPlus.Soap.SoapHeaderAttribute("ActionResult", typeof(ActionResult), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.Out)]
+        ProcResult ReceptionConfirmationProcess(string xmlMessage, int zicyzUserId);
         
         [System.ServiceModel.OperationContractAttribute(Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/ReceptionConfirmationPro" +
             "cess", ReplyAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/ReceptionConfirmationPro" +
             "cessResponse")]
-        System.Threading.Tasks.Task<FenixSoapWebService.FenixAppService.ProcResult> ReceptionConfirmationProcessAsync(string xmlMessage, int zicyzUserId);
+        System.Threading.Tasks.Task<ProcResult> ReceptionConfirmationProcessAsync(string xmlMessage, int zicyzUserId);
         
         /// <summary>zpracování potrvzení kittingu</summary>
         [System.ServiceModel.OperationContractAttribute(Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/KittingConfirmationProce" +
             "ss", ReplyAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/KittingConfirmationProce" +
             "ssResponse")]
-        [WCFExtrasPlus.Soap.SoapHeaderAttribute("AuthToken", typeof(FenixSoapWebService.FenixAppService.AuthToken), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.In)]
-        [WCFExtrasPlus.Soap.SoapHeaderAttribute("ActionResult", typeof(FenixSoapWebService.FenixAppService.ActionResult), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.Out)]
-        FenixSoapWebService.FenixAppService.ProcResult KittingConfirmationProcess(string xmlMessage, int zicyzUserId);
+        [WCFExtrasPlus.Soap.SoapHeaderAttribute("AuthToken", typeof(AuthToken), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.In)]
+        [WCFExtrasPlus.Soap.SoapHeaderAttribute("ActionResult", typeof(ActionResult), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.Out)]
+        ProcResult KittingConfirmationProcess(string xmlMessage, int zicyzUserId);
         
         [System.ServiceModel.OperationContractAttribute(Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/KittingConfirmationProce" +
             "ss", ReplyAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/KittingConfirmationProce" +
             "ssResponse")]
-        System.Threading.Tasks.Task<FenixSoapWebService.FenixAppService.ProcResult> KittingConfirmationProcessAsync(string xmlMessage, int zicyzUserId);
+        System.Threading.Tasks.Task<ProcResult> KittingConfirmationProcessAsync(string xmlMessage, int zicyzUserId);
         
         /// <summary>zpracování potrvzení závozu/expedice</summary>
         [System.ServiceModel.OperationContractAttribute(Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/ShipmentConfirmationProc" +
             "ess", ReplyAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/ShipmentConfirmationProc" +
             "essResponse")]
-        [WCFExtrasPlus.Soap.SoapHeaderAttribute("AuthToken", typeof(FenixSoapWebService.FenixAppService.AuthToken), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.In)]
-        [WCFExtrasPlus.Soap.SoapHeaderAttribute("ActionResult", typeof(FenixSoapWebService.FenixAppService.ActionResult), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.Out)]
-        FenixSoapWebService.FenixAppService.ProcResult ShipmentConfirmationProcess(string xmlMessage, int zicyzUserId);
+        [WCFExtrasPlus.Soap.SoapHeaderAttribute("AuthToken", typeof(AuthToken), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.In)]
+        [WCFExtrasPlus.Soap.SoapHeaderAttribute("ActionResult", typeof(ActionResult), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.Out)]
+        ProcResult ShipmentConfirmationProcess(string xmlMessage, int zicyzUserId);
         
         [System.ServiceModel.OperationContractAttribute(Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/ShipmentConfirmationProc" +
             "ess", ReplyAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/ShipmentConfirmationProc" +
             "essResponse")]
-        System.Threading.Tasks.Task<FenixSoapWebService.FenixAppService.ProcResult> ShipmentConfirmationProcessAsync(string xmlMessage, int zicyzUserId);
+        System.Threading.Tasks.Task<ProcResult> ShipmentConfirmationProcessAsync(string xmlMessage, int zicyzUserId);
         
         /// <summary>zpracování vratek (vrácené zařízení)</summary>
         [System.ServiceModel.OperationContractAttribute(Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/ReturnedEquipmentProcess" +
             "", ReplyAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/ReturnedEquipmentProcess" +
             "Response")]
-        [WCFExtrasPlus.Soap.SoapHeaderAttribute("AuthToken", typeof(FenixSoapWebService.FenixAppService.AuthToken), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.In)]
-        [WCFExtrasPlus.Soap.SoapHeaderAttribute("ActionResult", typeof(FenixSoapWebService.FenixAppService.ActionResult), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.Out)]
-        FenixSoapWebService.FenixAppService.ProcResult ReturnedEquipmentProcess(string xmlMessage, int zicyzUserId);
+        [WCFExtrasPlus.Soap.SoapHeaderAttribute("AuthToken", typeof(AuthToken), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.In)]
+        [WCFExtrasPlus.Soap.SoapHeaderAttribute("ActionResult", typeof(ActionResult), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.Out)]
+        ProcResult ReturnedEquipmentProcess(string xmlMessage, int zicyzUserId);
         
         [System.ServiceModel.OperationContractAttribute(Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/ReturnedEquipmentProcess" +
             "", ReplyAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/ReturnedEquipmentProcess" +
             "Response")]
-        System.Threading.Tasks.Task<FenixSoapWebService.FenixAppService.ProcResult> ReturnedEquipmentProcessAsync(string xmlMessage, int zicyzUserId);
+        System.Threading.Tasks.Task<ProcResult> ReturnedEquipmentProcessAsync(string xmlMessage, int zicyzUserId);
         
         /// <summary>zpracování vratek (vrácené itemy)</summary>
         [System.ServiceModel.OperationContractAttribute(Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/ReturnedItemProcess", ReplyAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/ReturnedItemProcessRespo" +
             "nse")]
-        [WCFExtrasPlus.Soap.SoapHeaderAttribute("AuthToken", typeof(FenixSoapWebService.FenixAppService.AuthToken), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.In)]
-        [WCFExtrasPlus.Soap.SoapHeaderAttribute("ActionResult", typeof(FenixSoapWebService.FenixAppService.ActionResult), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.Out)]
-        FenixSoapWebService.FenixAppService.ProcResult ReturnedItemProcess(string xmlMessage, int zicyzUserId);
+        [WCFExtrasPlus.Soap.SoapHeaderAttribute("AuthToken", typeof(AuthToken), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.In)]
+        [WCFExtrasPlus.Soap.SoapHeaderAttribute("ActionResult", typeof(ActionResult), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.Out)]
+        ProcResult ReturnedItemProcess(string xmlMessage, int zicyzUserId);
         
         [System.ServiceModel.OperationContractAttribute(Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/ReturnedItemProcess", ReplyAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/ReturnedItemProcessRespo" +
             "nse")]
-        System.Threading.Tasks.Task<FenixSoapWebService.FenixAppService.ProcResult> ReturnedItemProcessAsync(string xmlMessage, int zicyzUserId);
+        System.Threading.Tasks.Task<ProcResult> ReturnedItemProcessAsync(string xmlMessage, int zicyzUserId);
         
         /// <summary>zpracování vratek (závoz na repasi CPE)</summary>
         [System.ServiceModel.OperationContractAttribute(Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/ReturnedShipmentProcess", ReplyAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/ReturnedShipmentProcessR" +
             "esponse")]
-        [WCFExtrasPlus.Soap.SoapHeaderAttribute("AuthToken", typeof(FenixSoapWebService.FenixAppService.AuthToken), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.In)]
-        [WCFExtrasPlus.Soap.SoapHeaderAttribute("ActionResult", typeof(FenixSoapWebService.FenixAppService.ActionResult), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.Out)]
-        FenixSoapWebService.FenixAppService.ProcResult ReturnedShipmentProcess(string xmlMessage, int zicyzUserId);
+        [WCFExtrasPlus.Soap.SoapHeaderAttribute("AuthToken", typeof(AuthToken), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.In)]
+        [WCFExtrasPlus.Soap.SoapHeaderAttribute("ActionResult", typeof(ActionResult), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.Out)]
+        ProcResult ReturnedShipmentProcess(string xmlMessage, int zicyzUserId);
         
         [System.ServiceModel.OperationContractAttribute(Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/ReturnedShipmentProcess", ReplyAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/ReturnedShipmentProcessR" +
             "esponse")]
-        System.Threading.Tasks.Task<FenixSoapWebService.FenixAppService.ProcResult> ReturnedShipmentProcessAsync(string xmlMessage, int zicyzUserId);
+        System.Threading.Tasks.Task<ProcResult> ReturnedShipmentProcessAsync(string xmlMessage, int zicyzUserId);
         
         /// <summary>Repase - potvrzení naskladnění repasovaného zboží - RefurbishedConfirmation  (message RF1)</summary>
         [System.ServiceModel.OperationContractAttribute(Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/RefurbishedConfirmationP" +
             "rocess", ReplyAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/RefurbishedConfirmationP" +
             "rocessResponse")]
-        [WCFExtrasPlus.Soap.SoapHeaderAttribute("AuthToken", typeof(FenixSoapWebService.FenixAppService.AuthToken), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.In)]
-        [WCFExtrasPlus.Soap.SoapHeaderAttribute("ActionResult", typeof(FenixSoapWebService.FenixAppService.ActionResult), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.Out)]
-        FenixSoapWebService.FenixAppService.ProcResult RefurbishedConfirmationProcess(string xmlMessage, int zicyzUserId);
+        [WCFExtrasPlus.Soap.SoapHeaderAttribute("AuthToken", typeof(AuthToken), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.In)]
+        [WCFExtrasPlus.Soap.SoapHeaderAttribute("ActionResult", typeof(ActionResult), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.Out)]
+        ProcResult RefurbishedConfirmationProcess(string xmlMessage, int zicyzUserId);
         
         [System.ServiceModel.OperationContractAttribute(Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/RefurbishedConfirmationP" +
             "rocess", ReplyAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/RefurbishedConfirmationP" +
             "rocessResponse")]
-        System.Threading.Tasks.Task<FenixSoapWebService.FenixAppService.ProcResult> RefurbishedConfirmationProcessAsync(string xmlMessage, int zicyzUserId);
+        System.Threading.Tasks.Task<ProcResult> RefurbishedConfirmationProcessAsync(string xmlMessage, int zicyzUserId);
         
         /// <summary>Zjištění stavu FenixSoapService, FenixAppService a FenixAutomat</summary>
         [System.ServiceModel.OperationContractAttribute(Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/GetServicesStatuses", ReplyAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/GetServicesStatusesRespo" +
             "nse")]
-        [WCFExtrasPlus.Soap.SoapHeaderAttribute("AuthToken", typeof(FenixSoapWebService.FenixAppService.AuthToken), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.In)]
-        [WCFExtrasPlus.Soap.SoapHeaderAttribute("ActionResult", typeof(FenixSoapWebService.FenixAppService.ActionResult), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.Out)]
-        FenixSoapWebService.FenixAppService.ProcResult GetServicesStatuses(int zicyzUserId);
+        [WCFExtrasPlus.Soap.SoapHeaderAttribute("AuthToken", typeof(AuthToken), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.In)]
+        [WCFExtrasPlus.Soap.SoapHeaderAttribute("ActionResult", typeof(ActionResult), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.Out)]
+        ProcResult GetServicesStatuses(int zicyzUserId);
         
         [System.ServiceModel.OperationContractAttribute(Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/GetServicesStatuses", ReplyAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/GetServicesStatusesRespo" +
             "nse")]
-        System.Threading.Tasks.Task<FenixSoapWebService.FenixAppService.ProcResult> GetServicesStatusesAsync(int zicyzUserId);
+        System.Threading.Tasks.Task<ProcResult> GetServicesStatusesAsync(int zicyzUserId);
         
         /// <summary>Delete Message - zrušení zprávy  (message D1)</summary>
         [System.ServiceModel.OperationContractAttribute(Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/DeleteMessageConfirmatio" +
             "nProcess", ReplyAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/DeleteMessageConfirmatio" +
             "nProcessResponse")]
-        [WCFExtrasPlus.Soap.SoapHeaderAttribute("AuthToken", typeof(FenixSoapWebService.FenixAppService.AuthToken), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.In)]
-        [WCFExtrasPlus.Soap.SoapHeaderAttribute("ActionResult", typeof(FenixSoapWebService.FenixAppService.ActionResult), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.Out)]
-        FenixSoapWebService.FenixAppService.ProcResult DeleteMessageConfirmationProcess(string xmlMessage, int zicyzUserId);
+        [WCFExtrasPlus.Soap.SoapHeaderAttribute("AuthToken", typeof(AuthToken), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.In)]
+        [WCFExtrasPlus.Soap.SoapHeaderAttribute("ActionResult", typeof(ActionResult), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.Out)]
+        ProcResult DeleteMessageConfirmationProcess(string xmlMessage, int zicyzUserId);
         
         [System.ServiceModel.OperationContractAttribute(Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/DeleteMessageConfirmatio" +
             "nProcess", ReplyAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/DeleteMessageConfirmatio" +
             "nProcessResponse")]
-        System.Threading.Tasks.Task<FenixSoapWebService.FenixAppService.ProcResult> DeleteMessageConfirmationProcessAsync(string xmlMessage, int zicyzUserId);
+        System.Threading.Tasks.Task<ProcResult> DeleteMessageConfirmationProcessAsync(string xmlMessage, int zicyzUserId);
         
         /// <summary>Crm objednávka - potvrzení  (message C1)</summary>
         [System.ServiceModel.OperationContractAttribute(Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/CrmOrderConfirmationProc" +
             "ess", ReplyAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/CrmOrderConfirmationProc" +
             "essResponse")]
-        [WCFExtrasPlus.Soap.SoapHeaderAttribute("AuthToken", typeof(FenixSoapWebService.FenixAppService.AuthToken), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.In)]
-        [WCFExtrasPlus.Soap.SoapHeaderAttribute("ActionResult", typeof(FenixSoapWebService.FenixAppService.ActionResult), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.Out)]
-        FenixSoapWebService.FenixAppService.ProcResult CrmOrderConfirmationProcess(string xmlMessage, int zicyzUserId);
+        [WCFExtrasPlus.Soap.SoapHeaderAttribute("AuthToken", typeof(AuthToken), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.In)]
+        [WCFExtrasPlus.Soap.SoapHeaderAttribute("ActionResult", typeof(ActionResult), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.Out)]
+        ProcResult CrmOrderConfirmationProcess(string xmlMessage, int zicyzUserId);
         
         [System.ServiceModel.OperationContractAttribute(Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/CrmOrderConfirmationProc" +
             "ess", ReplyAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/CrmOrderConfirmationProc" +
             "essResponse")]
-        System.Threading.Tasks.Task<FenixSoapWebService.FenixAppService.ProcResult> CrmOrderConfirmationProcessAsync(string xmlMessage, int zicyzUserId);
+        System.Threading.Tasks.Task<ProcResult> CrmOrderConfirmationProcessAsync(string xmlMessage, int zicyzUserId);
         
         /// <summary>Crm objednávka - odsouhlasení (message C2)</summary>
         [System.ServiceModel.OperationContractAttribute(Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/CrmOrderApprovalProcess", ReplyAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/CrmOrderApprovalProcessR" +
             "esponse")]
-        [WCFExtrasPlus.Soap.SoapHeaderAttribute("AuthToken", typeof(FenixSoapWebService.FenixAppService.AuthToken), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.In)]
-        [WCFExtrasPlus.Soap.SoapHeaderAttribute("ActionResult", typeof(FenixSoapWebService.FenixAppService.ActionResult), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.Out)]
-        FenixSoapWebService.FenixAppService.ProcResult CrmOrderApprovalProcess(string xmlMessage, int zicyzUserId);
+        [WCFExtrasPlus.Soap.SoapHeaderAttribute("AuthToken", typeof(AuthToken), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.In)]
+        [WCFExtrasPlus.Soap.SoapHeaderAttribute("ActionResult", typeof(ActionResult), Direction=WCFExtrasPlus.Soap.SoapHeaderDirection.Out)]
+        ProcResult CrmOrderApprovalProcess(string xmlMessage, int zicyzUserId);
         
         [System.ServiceModel.OperationContractAttribute(Action="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/CrmOrderApprovalProcess", ReplyAction="https://ws8websecapp.upc.cz/FenixAppService/IFenixAppSvc/CrmOrderApprovalProcessR" +
             "esponse")]
-        System.Threading.Tasks.Task<FenixSoapWebService.FenixAppService.ProcResult> CrmOrderApprovalProcessAsync(string xmlMessage, int zicyzUserId);
+        System.Threading.Tasks.Task<ProcResult> CrmOrderApprovalProcessAsync(string xmlMessage, int zicyzUserId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IFenixAppSvcChannel : FenixSoapWebService.FenixAppService.IFenixAppSvc, System.ServiceModel.IClientChannel {
+    public interface IFenixAppSvcChannel : IFenixAppSvc, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class FenixAppSvcClient : System.ServiceModel.ClientBase<FenixSoapWebService.FenixAppService.IFenixAppSvc>, FenixSoapWebService.FenixAppService.IFenixAppSvc {
+    public partial class FenixAppSvcClient : System.ServiceModel.ClientBase<IFenixAppSvc>, IFenixAppSvc {
         
         public FenixAppSvcClient() {
         }
@@ -405,131 +404,131 @@ namespace FenixSoapWebService.FenixAppService {
                 base(binding, remoteAddress) {
         }
         
-        public FenixSoapWebService.FenixAppService.ProcResult AppLogWriteNew(string type, string message, string xmlDeclaration, string xmlMessage, int zicyzUserId, string source) {
+        public ProcResult AppLogWriteNew(string type, string message, string xmlDeclaration, string xmlMessage, int zicyzUserId, string source) {
             return base.Channel.AppLogWriteNew(type, message, xmlDeclaration, xmlMessage, zicyzUserId, source);
         }
         
-        public System.Threading.Tasks.Task<FenixSoapWebService.FenixAppService.ProcResult> AppLogWriteNewAsync(string type, string message, string xmlDeclaration, string xmlMessage, int zicyzUserId, string source) {
+        public System.Threading.Tasks.Task<ProcResult> AppLogWriteNewAsync(string type, string message, string xmlDeclaration, string xmlMessage, int zicyzUserId, string source) {
             return base.Channel.AppLogWriteNewAsync(type, message, xmlDeclaration, xmlMessage, zicyzUserId, source);
         }
         
-        public FenixSoapWebService.FenixAppService.ProcResult AppLogWriteInfo(string message, int zicyzUserId, string source) {
+        public ProcResult AppLogWriteInfo(string message, int zicyzUserId, string source) {
             return base.Channel.AppLogWriteInfo(message, zicyzUserId, source);
         }
         
-        public System.Threading.Tasks.Task<FenixSoapWebService.FenixAppService.ProcResult> AppLogWriteInfoAsync(string message, int zicyzUserId, string source) {
+        public System.Threading.Tasks.Task<ProcResult> AppLogWriteInfoAsync(string message, int zicyzUserId, string source) {
             return base.Channel.AppLogWriteInfoAsync(message, zicyzUserId, source);
         }
         
-        public FenixSoapWebService.FenixAppService.ProcResult AppLogWriteWarning(string message, int zicyzUserId, string source) {
+        public ProcResult AppLogWriteWarning(string message, int zicyzUserId, string source) {
             return base.Channel.AppLogWriteWarning(message, zicyzUserId, source);
         }
         
-        public System.Threading.Tasks.Task<FenixSoapWebService.FenixAppService.ProcResult> AppLogWriteWarningAsync(string message, int zicyzUserId, string source) {
+        public System.Threading.Tasks.Task<ProcResult> AppLogWriteWarningAsync(string message, int zicyzUserId, string source) {
             return base.Channel.AppLogWriteWarningAsync(message, zicyzUserId, source);
         }
         
-        public FenixSoapWebService.FenixAppService.ProcResult AppLogWriteError(string message, int zicyzUserId, string source) {
+        public ProcResult AppLogWriteError(string message, int zicyzUserId, string source) {
             return base.Channel.AppLogWriteError(message, zicyzUserId, source);
         }
         
-        public System.Threading.Tasks.Task<FenixSoapWebService.FenixAppService.ProcResult> AppLogWriteErrorAsync(string message, int zicyzUserId, string source) {
+        public System.Threading.Tasks.Task<ProcResult> AppLogWriteErrorAsync(string message, int zicyzUserId, string source) {
             return base.Channel.AppLogWriteErrorAsync(message, zicyzUserId, source);
         }
         
-        public FenixSoapWebService.FenixAppService.ProcResult AppLogWriteXml(string message, string xmlDeclaration, string xmlMessage, int zicyzUserId, string source) {
+        public ProcResult AppLogWriteXml(string message, string xmlDeclaration, string xmlMessage, int zicyzUserId, string source) {
             return base.Channel.AppLogWriteXml(message, xmlDeclaration, xmlMessage, zicyzUserId, source);
         }
         
-        public System.Threading.Tasks.Task<FenixSoapWebService.FenixAppService.ProcResult> AppLogWriteXmlAsync(string message, string xmlDeclaration, string xmlMessage, int zicyzUserId, string source) {
+        public System.Threading.Tasks.Task<ProcResult> AppLogWriteXmlAsync(string message, string xmlDeclaration, string xmlMessage, int zicyzUserId, string source) {
             return base.Channel.AppLogWriteXmlAsync(message, xmlDeclaration, xmlMessage, zicyzUserId, source);
         }
         
-        public FenixSoapWebService.FenixAppService.ProcResult ReceptionConfirmationProcess(string xmlMessage, int zicyzUserId) {
+        public ProcResult ReceptionConfirmationProcess(string xmlMessage, int zicyzUserId) {
             return base.Channel.ReceptionConfirmationProcess(xmlMessage, zicyzUserId);
         }
         
-        public System.Threading.Tasks.Task<FenixSoapWebService.FenixAppService.ProcResult> ReceptionConfirmationProcessAsync(string xmlMessage, int zicyzUserId) {
+        public System.Threading.Tasks.Task<ProcResult> ReceptionConfirmationProcessAsync(string xmlMessage, int zicyzUserId) {
             return base.Channel.ReceptionConfirmationProcessAsync(xmlMessage, zicyzUserId);
         }
         
-        public FenixSoapWebService.FenixAppService.ProcResult KittingConfirmationProcess(string xmlMessage, int zicyzUserId) {
+        public ProcResult KittingConfirmationProcess(string xmlMessage, int zicyzUserId) {
             return base.Channel.KittingConfirmationProcess(xmlMessage, zicyzUserId);
         }
         
-        public System.Threading.Tasks.Task<FenixSoapWebService.FenixAppService.ProcResult> KittingConfirmationProcessAsync(string xmlMessage, int zicyzUserId) {
+        public System.Threading.Tasks.Task<ProcResult> KittingConfirmationProcessAsync(string xmlMessage, int zicyzUserId) {
             return base.Channel.KittingConfirmationProcessAsync(xmlMessage, zicyzUserId);
         }
         
-        public FenixSoapWebService.FenixAppService.ProcResult ShipmentConfirmationProcess(string xmlMessage, int zicyzUserId) {
+        public ProcResult ShipmentConfirmationProcess(string xmlMessage, int zicyzUserId) {
             return base.Channel.ShipmentConfirmationProcess(xmlMessage, zicyzUserId);
         }
         
-        public System.Threading.Tasks.Task<FenixSoapWebService.FenixAppService.ProcResult> ShipmentConfirmationProcessAsync(string xmlMessage, int zicyzUserId) {
+        public System.Threading.Tasks.Task<ProcResult> ShipmentConfirmationProcessAsync(string xmlMessage, int zicyzUserId) {
             return base.Channel.ShipmentConfirmationProcessAsync(xmlMessage, zicyzUserId);
         }
         
-        public FenixSoapWebService.FenixAppService.ProcResult ReturnedEquipmentProcess(string xmlMessage, int zicyzUserId) {
+        public ProcResult ReturnedEquipmentProcess(string xmlMessage, int zicyzUserId) {
             return base.Channel.ReturnedEquipmentProcess(xmlMessage, zicyzUserId);
         }
         
-        public System.Threading.Tasks.Task<FenixSoapWebService.FenixAppService.ProcResult> ReturnedEquipmentProcessAsync(string xmlMessage, int zicyzUserId) {
+        public System.Threading.Tasks.Task<ProcResult> ReturnedEquipmentProcessAsync(string xmlMessage, int zicyzUserId) {
             return base.Channel.ReturnedEquipmentProcessAsync(xmlMessage, zicyzUserId);
         }
         
-        public FenixSoapWebService.FenixAppService.ProcResult ReturnedItemProcess(string xmlMessage, int zicyzUserId) {
+        public ProcResult ReturnedItemProcess(string xmlMessage, int zicyzUserId) {
             return base.Channel.ReturnedItemProcess(xmlMessage, zicyzUserId);
         }
         
-        public System.Threading.Tasks.Task<FenixSoapWebService.FenixAppService.ProcResult> ReturnedItemProcessAsync(string xmlMessage, int zicyzUserId) {
+        public System.Threading.Tasks.Task<ProcResult> ReturnedItemProcessAsync(string xmlMessage, int zicyzUserId) {
             return base.Channel.ReturnedItemProcessAsync(xmlMessage, zicyzUserId);
         }
         
-        public FenixSoapWebService.FenixAppService.ProcResult ReturnedShipmentProcess(string xmlMessage, int zicyzUserId) {
+        public ProcResult ReturnedShipmentProcess(string xmlMessage, int zicyzUserId) {
             return base.Channel.ReturnedShipmentProcess(xmlMessage, zicyzUserId);
         }
         
-        public System.Threading.Tasks.Task<FenixSoapWebService.FenixAppService.ProcResult> ReturnedShipmentProcessAsync(string xmlMessage, int zicyzUserId) {
+        public System.Threading.Tasks.Task<ProcResult> ReturnedShipmentProcessAsync(string xmlMessage, int zicyzUserId) {
             return base.Channel.ReturnedShipmentProcessAsync(xmlMessage, zicyzUserId);
         }
         
-        public FenixSoapWebService.FenixAppService.ProcResult RefurbishedConfirmationProcess(string xmlMessage, int zicyzUserId) {
+        public ProcResult RefurbishedConfirmationProcess(string xmlMessage, int zicyzUserId) {
             return base.Channel.RefurbishedConfirmationProcess(xmlMessage, zicyzUserId);
         }
         
-        public System.Threading.Tasks.Task<FenixSoapWebService.FenixAppService.ProcResult> RefurbishedConfirmationProcessAsync(string xmlMessage, int zicyzUserId) {
+        public System.Threading.Tasks.Task<ProcResult> RefurbishedConfirmationProcessAsync(string xmlMessage, int zicyzUserId) {
             return base.Channel.RefurbishedConfirmationProcessAsync(xmlMessage, zicyzUserId);
         }
         
-        public FenixSoapWebService.FenixAppService.ProcResult GetServicesStatuses(int zicyzUserId) {
+        public ProcResult GetServicesStatuses(int zicyzUserId) {
             return base.Channel.GetServicesStatuses(zicyzUserId);
         }
         
-        public System.Threading.Tasks.Task<FenixSoapWebService.FenixAppService.ProcResult> GetServicesStatusesAsync(int zicyzUserId) {
+        public System.Threading.Tasks.Task<ProcResult> GetServicesStatusesAsync(int zicyzUserId) {
             return base.Channel.GetServicesStatusesAsync(zicyzUserId);
         }
         
-        public FenixSoapWebService.FenixAppService.ProcResult DeleteMessageConfirmationProcess(string xmlMessage, int zicyzUserId) {
+        public ProcResult DeleteMessageConfirmationProcess(string xmlMessage, int zicyzUserId) {
             return base.Channel.DeleteMessageConfirmationProcess(xmlMessage, zicyzUserId);
         }
         
-        public System.Threading.Tasks.Task<FenixSoapWebService.FenixAppService.ProcResult> DeleteMessageConfirmationProcessAsync(string xmlMessage, int zicyzUserId) {
+        public System.Threading.Tasks.Task<ProcResult> DeleteMessageConfirmationProcessAsync(string xmlMessage, int zicyzUserId) {
             return base.Channel.DeleteMessageConfirmationProcessAsync(xmlMessage, zicyzUserId);
         }
         
-        public FenixSoapWebService.FenixAppService.ProcResult CrmOrderConfirmationProcess(string xmlMessage, int zicyzUserId) {
+        public ProcResult CrmOrderConfirmationProcess(string xmlMessage, int zicyzUserId) {
             return base.Channel.CrmOrderConfirmationProcess(xmlMessage, zicyzUserId);
         }
         
-        public System.Threading.Tasks.Task<FenixSoapWebService.FenixAppService.ProcResult> CrmOrderConfirmationProcessAsync(string xmlMessage, int zicyzUserId) {
+        public System.Threading.Tasks.Task<ProcResult> CrmOrderConfirmationProcessAsync(string xmlMessage, int zicyzUserId) {
             return base.Channel.CrmOrderConfirmationProcessAsync(xmlMessage, zicyzUserId);
         }
         
-        public FenixSoapWebService.FenixAppService.ProcResult CrmOrderApprovalProcess(string xmlMessage, int zicyzUserId) {
+        public ProcResult CrmOrderApprovalProcess(string xmlMessage, int zicyzUserId) {
             return base.Channel.CrmOrderApprovalProcess(xmlMessage, zicyzUserId);
         }
         
-        public System.Threading.Tasks.Task<FenixSoapWebService.FenixAppService.ProcResult> CrmOrderApprovalProcessAsync(string xmlMessage, int zicyzUserId) {
+        public System.Threading.Tasks.Task<ProcResult> CrmOrderApprovalProcessAsync(string xmlMessage, int zicyzUserId) {
             return base.Channel.CrmOrderApprovalProcessAsync(xmlMessage, zicyzUserId);
         }
     }

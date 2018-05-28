@@ -1,6 +1,9 @@
-﻿using WCFExtrasPlus.Soap;
+﻿using Fenix.WebService.Service_References.FenixAppService;
+using WCFExtrasPlus.Soap;
+// ReSharper disable CheckNamespace
 
-namespace FenixSoapWebService.FenixAppService
+
+namespace Fenix.WebService.Service_References.FenixAppService
 {
 	public partial class FenixAppSvcClient
 	{

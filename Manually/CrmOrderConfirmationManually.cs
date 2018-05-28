@@ -1,28 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
-namespace FenixSoapWebService.Manually
+namespace Fenix.WebService.Manually
 {
 	/// <summary>
 	/// Hardcoded vytvoření potvrzení CrmOrder CrmOrderConfirmation message C1
 	/// </summary>
 	public class CrmOrderConfirmationManually
 	{
-		/// <summary>
-		/// Vrací hardcoded XML string pro C1 
-		/// </summary>
-		/// <param name="orderId"></param>
-		/// <returns></returns>
-		public static string GetCrmOrderConfirmation(int confirmationId)
+	    /// <summary>
+	    /// Vrací hardcoded XML string pro C1 
+	    /// </summary>
+	    /// <param name="confirmationId"></param>
+	    /// <returns></returns>
+	    public static string GetCrmOrderConfirmation(int confirmationId)
 		{
 			string xmlString = String.Empty;
 
 			switch (confirmationId)
 			{
 				case 1:
-					xmlString = confirmationId1();
+					xmlString = ConfirmationId1();
 					break;
 				default:
 					throw new Exception("Neznámé číslo CrmOrder Confirmation - C1");
@@ -31,7 +28,11 @@ namespace FenixSoapWebService.Manually
 			return xmlString;
 		}
 
-		private static string confirmationId1()
+	    /// <summary>
+	    /// Vlastní vytvoření hardcoded XML stringu C1
+	    /// </summary>
+	    /// <returns></returns>
+		private static string ConfirmationId1()
 		{
 			return
 		@"<NewDataSet>

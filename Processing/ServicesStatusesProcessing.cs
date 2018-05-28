@@ -1,16 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Web;
-using System.Web.Services;
-using System.Xml.Linq;
-using System.Xml.Serialization;
-using AuthService;
-using FenixHelper;
-using FenixSoapWebService.FenixAppService;
+using Fenix.WebService.Service_References.FenixAppService;
 
-namespace FenixSoapWebService.Processing
+namespace Fenix.WebService.Processing
 {
 	/// <summary>
 	/// Třída pro požadavku na zjištění 'zdraví služeb'
@@ -27,7 +18,7 @@ namespace FenixSoapWebService.Processing
 		/// <param name="xmlString"></param>
 		/// <param name="encoding"></param>  
 		/// <returns>result.MessageDescription by měla obsahovat string 'Automat Rows : 1  |   DateTime : yyyy-mm-dd hh:mi:ss.mmm'</returns>
-		public static SubmitDataToProcessingResult Process(AuthService.AuthToken authToken, string login, string password, string partnerCode, string messageType)
+		public static SubmitDataToProcessingResult Process(AuthToken authToken, string login, string password, string partnerCode, string messageType)
 		{
 			SubmitDataToProcessingResult result = new SubmitDataToProcessingResult();
 
@@ -36,7 +27,7 @@ namespace FenixSoapWebService.Processing
 				if (authToken != null)
 				{
 					FenixAppSvcClient appClient = new FenixAppSvcClient();
-					appClient.AuthToken = new FenixAppService.AuthToken() { Value = authToken.Value };
+					appClient.AuthToken = new Fenix.WebService.Service_References.FenixAppService.AuthToken() { Value = authToken.Value };
 					ProcResult procResult = appClient.GetServicesStatuses(BC.ZICYZ_USER_ID);						
 					appClient.Close();
 										
@@ -46,13 +37,13 @@ namespace FenixSoapWebService.Processing
 					}
 					else
 					{
-						ProjectHelper.CreateErrorResult(FenixHelper.AppLog.GetMethodName(), ref result, "90", procResult.ReturnMessage);
+						ProjectHelper.CreateErrorResult(ApplicationLog.GetMethodName(), ref result, "90", procResult.ReturnMessage);
 					}					
 				}
 			}
 			catch (Exception ex)
 			{
-				ProjectHelper.CreateErrorResult(FenixHelper.AppLog.GetMethodName(), ref result, "100", ex);
+				ProjectHelper.CreateErrorResult(ApplicationLog.GetMethodName(), ref result, "100", ex);
 			}
 
 			return result;

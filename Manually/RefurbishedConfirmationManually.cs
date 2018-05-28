@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
-namespace FenixSoapWebService.Manually
+namespace Fenix.WebService.Manually
 {
 	/// <summary>
 	/// Hardcoded vytvoření potvrzení naskladnění repasovaného zboží ze strany ND - RefurbishedConfirmation message RF1
@@ -41,78 +38,78 @@ namespace FenixSoapWebService.Manually
 		private static string confirmationId3()
 		{
 			return
-@"<NewDataSet>
-	<CommunicationMessagesRefurbishedConfirmation>
-		<ID>200000244</ID>
-		<MessageID>220000244</MessageID>
-		<MessageTypeID>13</MessageTypeID>
-		<MessageTypeDescription>RefurbishedConfirmation</MessageTypeDescription>	
-	    <RefurbishedOrderID>13</RefurbishedOrderID>  
-	    <CustomerID>2</CustomerID>
-	    <CustomerDescription>A04 UPC OSTRAVA</CustomerDescription>
-	    <DateOfShipment>2014-11-28</DateOfShipment>
-		<itemsOrKits>
-			<itemOrKit>
-				<ItemVerKit>0</ItemVerKit>
-				<ItemOrKitID>920370074</ItemOrKitID>			
-				<ItemOrKitDescription>Lepící páska s logem UPC</ItemOrKitDescription>			
-				<ItemOrKitQuantity>10</ItemOrKitQuantity>			
-				<ItemOrKitUnitOfMeasureID>1</ItemOrKitUnitOfMeasureID>
-				<ItemOrKitUnitOfMeasure>KS</ItemOrKitUnitOfMeasure>
-				<ItemOrKitQualityID>1</ItemOrKitQualityID>
-				<ItemOrKitQuality>New</ItemOrKitQuality>
-				<NDReceipt>NDR654</NDReceipt>
-			</itemOrKit>
-		</itemsOrKits>	
-	</CommunicationMessagesRefurbishedConfirmation>
-</NewDataSet>";
+                @"<NewDataSet>
+	                <CommunicationMessagesRefurbishedConfirmation>
+		                <ID>200000244</ID>
+		                <MessageID>220000244</MessageID>
+		                <MessageTypeID>13</MessageTypeID>
+		                <MessageTypeDescription>RefurbishedConfirmation</MessageTypeDescription>	
+	                    <RefurbishedOrderID>13</RefurbishedOrderID>  
+	                    <CustomerID>2</CustomerID>
+	                    <CustomerDescription>A04 UPC OSTRAVA</CustomerDescription>
+	                    <DateOfShipment>2014-11-28</DateOfShipment>
+		                <itemsOrKits>
+			                <itemOrKit>
+				                <ItemVerKit>0</ItemVerKit>
+				                <ItemOrKitID>920370074</ItemOrKitID>			
+				                <ItemOrKitDescription>Lepící páska s logem UPC</ItemOrKitDescription>			
+				                <ItemOrKitQuantity>10</ItemOrKitQuantity>			
+				                <ItemOrKitUnitOfMeasureID>1</ItemOrKitUnitOfMeasureID>
+				                <ItemOrKitUnitOfMeasure>KS</ItemOrKitUnitOfMeasure>
+				                <ItemOrKitQualityID>1</ItemOrKitQualityID>
+				                <ItemOrKitQuality>New</ItemOrKitQuality>
+				                <NDReceipt>NDR654</NDReceipt>
+			                </itemOrKit>
+		                </itemsOrKits>	
+	                </CommunicationMessagesRefurbishedConfirmation>
+                </NewDataSet>";
 		}
 
 		private static string confirmationId2()
 		{
 			return
-@"<NewDataSet>
-	<CommunicationMessagesRefurbishedConfirmation>
-		<ID>0110000015</ID>
-		<MessageID>0110000015</MessageID>
-		<MessageTypeID>13</MessageTypeID>
-		<MessageTypeDescription>RefurbishedConfirmation</MessageTypeDescription>	
-	    <RefurbishedOrderID>1</RefurbishedOrderID>  
-	    <CustomerID>1</CustomerID>
-	    <CustomerDescription>A03 UPC PRAHA</CustomerDescription>
-	    <DateOfShipment>2014-09-25</DateOfShipment>
-		<itemsOrKits>
-			<itemOrKit>
-				<ItemVerKit>0</ItemVerKit>
-				<ItemOrKitID>100002069</ItemOrKitID>			
-				<ItemOrKitDescription>RCB 199</ItemOrKitDescription>			
-				<ItemOrKitQuantity>3</ItemOrKitQuantity>			
-				<ItemOrKitUnitOfMeasureID>1</ItemOrKitUnitOfMeasureID>
-				<ItemOrKitUnitOfMeasure>KS</ItemOrKitUnitOfMeasure>
-				<ItemOrKitQualityID>2</ItemOrKitQualityID>
-				<ItemOrKitQuality>TRR</ItemOrKitQuality>
-				<NDReceipt>NDR654</NDReceipt>
-			</itemOrKit>
-			<itemOrKit>		
-				<ItemVerKit>1</ItemVerKit>
-				<ItemOrKitID>1500000007</ItemOrKitID>			
-				<ItemOrKitDescription>CA MODUL SMIT (22/09/2014)</ItemOrKitDescription>			
-				<ItemOrKitQuantity>4</ItemOrKitQuantity>			
-				<ItemOrKitUnitOfMeasureID>1</ItemOrKitUnitOfMeasureID>
-				<ItemOrKitUnitOfMeasure>KS</ItemOrKitUnitOfMeasure>
-				<ItemOrKitQualityID>1</ItemOrKitQualityID>
-				<ItemOrKitQuality>New</ItemOrKitQuality>
-				<NDReceipt>NDR654</NDReceipt>
-				<ItemOrKitSNs>
-					<ItemSN SN1=""PD40060386"" SN2=""PD50060376"" />
-					<ItemSN SN1=""PD40060387"" SN2=""PD50060366"" />
-					<ItemSN SN1=""PD40060388"" SN2=""PD50060356"" />
-					<ItemSN SN1=""PD40060389"" SN2=""PD50060346"" />
-				</ItemOrKitSNs>
-			</itemOrKit>
-		</itemsOrKits>	
-	</CommunicationMessagesRefurbishedConfirmation>
-</NewDataSet>";
+                @"<NewDataSet>
+	                <CommunicationMessagesRefurbishedConfirmation>
+		                <ID>0110000015</ID>
+		                <MessageID>0110000015</MessageID>
+		                <MessageTypeID>13</MessageTypeID>
+		                <MessageTypeDescription>RefurbishedConfirmation</MessageTypeDescription>	
+	                    <RefurbishedOrderID>1</RefurbishedOrderID>  
+	                    <CustomerID>1</CustomerID>
+	                    <CustomerDescription>A03 UPC PRAHA</CustomerDescription>
+	                    <DateOfShipment>2014-09-25</DateOfShipment>
+		                <itemsOrKits>
+			                <itemOrKit>
+				                <ItemVerKit>0</ItemVerKit>
+				                <ItemOrKitID>100002069</ItemOrKitID>			
+				                <ItemOrKitDescription>RCB 199</ItemOrKitDescription>			
+				                <ItemOrKitQuantity>3</ItemOrKitQuantity>			
+				                <ItemOrKitUnitOfMeasureID>1</ItemOrKitUnitOfMeasureID>
+				                <ItemOrKitUnitOfMeasure>KS</ItemOrKitUnitOfMeasure>
+				                <ItemOrKitQualityID>2</ItemOrKitQualityID>
+				                <ItemOrKitQuality>TRR</ItemOrKitQuality>
+				                <NDReceipt>NDR654</NDReceipt>
+			                </itemOrKit>
+			                <itemOrKit>		
+				                <ItemVerKit>1</ItemVerKit>
+				                <ItemOrKitID>1500000007</ItemOrKitID>			
+				                <ItemOrKitDescription>CA MODUL SMIT (22/09/2014)</ItemOrKitDescription>			
+				                <ItemOrKitQuantity>4</ItemOrKitQuantity>			
+				                <ItemOrKitUnitOfMeasureID>1</ItemOrKitUnitOfMeasureID>
+				                <ItemOrKitUnitOfMeasure>KS</ItemOrKitUnitOfMeasure>
+				                <ItemOrKitQualityID>1</ItemOrKitQualityID>
+				                <ItemOrKitQuality>New</ItemOrKitQuality>
+				                <NDReceipt>NDR654</NDReceipt>
+				                <ItemOrKitSNs>
+					                <ItemSN SN1=""PD40060386"" SN2=""PD50060376"" />
+					                <ItemSN SN1=""PD40060387"" SN2=""PD50060366"" />
+					                <ItemSN SN1=""PD40060388"" SN2=""PD50060356"" />
+					                <ItemSN SN1=""PD40060389"" SN2=""PD50060346"" />
+				                </ItemOrKitSNs>
+			                </itemOrKit>
+		                </itemsOrKits>	
+	                </CommunicationMessagesRefurbishedConfirmation>
+                </NewDataSet>";
 		}
 
 
