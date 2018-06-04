@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Fenix.WebService.Manually
+namespace Fenix.WebService.Testing
 {
 	/// <summary>
 	/// Hardcoded vytvoření vratky ze strany ND - message VR1

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Fenix.WebService.Manually
+namespace Fenix.WebService.Testing
 {
 	public class ShipmentOrderManually
 	{
@@ -16,19 +16,19 @@ namespace Fenix.WebService.Manually
 			switch (orderId)
 			{
 				case 34:
-					xmlString = confirmationId34();
+					xmlString = ConfirmationId34();
 					break;
 				case 36:
-					xmlString = confirmationId36();
+					xmlString = ConfirmationId36();
 					break;
 				case 38:
-					xmlString = confirmationId38();
+					xmlString = ConfirmationId38();
 					break;
 				case 40:
-					xmlString = confirmationId40();
+					xmlString = ConfirmationId40();
 					break;
 				case 42:
-					xmlString = confirmationId42();
+					xmlString = ConfirmationId42();
 					break;
 				default:
 					throw new Exception("Neznámé číslo Shipment Confirmation - S1");
@@ -37,7 +37,7 @@ namespace Fenix.WebService.Manually
 			return xmlString;		
 		}
 
-		private static string confirmationId42()
+		private static string ConfirmationId42()
 		{
 			return
 @"<?xml version=""1.0"" encoding=""UTF-8""?>
@@ -93,7 +93,7 @@ namespace Fenix.WebService.Manually
 </NewDataSet>";
 		}
 
-		private static string confirmationId40()
+		private static string ConfirmationId40()
 		{
 			return
 @"<?xml version=""1.0"" encoding=""UTF-8""?>
@@ -149,7 +149,7 @@ namespace Fenix.WebService.Manually
 </NewDataSet>";
 		}
 
-		private static string confirmationId38()
+		private static string ConfirmationId38()
 		{
 			return
 @"<?xml version=""1.0"" encoding=""UTF-8""?>
@@ -206,7 +206,7 @@ namespace Fenix.WebService.Manually
 		}
 
 
-		private static string confirmationId36()
+		private static string ConfirmationId36()
 		{
 			return
 @"<?xml version=""1.0"" encoding=""UTF-8""?>
@@ -268,7 +268,7 @@ namespace Fenix.WebService.Manually
 		}
 
 
-		private static string confirmationId34()
+		private static string ConfirmationId34()
 		{
 			return 
 @"<NewDataSet>

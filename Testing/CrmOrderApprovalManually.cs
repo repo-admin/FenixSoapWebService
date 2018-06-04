@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Fenix.WebService.Manually
+namespace Fenix.WebService.Testing
 {
 	/// <summary>
 	/// Hardcoded vytvoření odsouhlasení CrmOrder CrmOrderApproval message C2

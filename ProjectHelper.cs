@@ -12,7 +12,7 @@ namespace Fenix.WebService
 		/// <summary>
 		/// pomocná interní třída
 		/// </summary>
-		internal class OS
+		internal class Os
 		{
 			/// <summary>
 			/// zjištění, zda aplikace běží na serveru
@@ -20,26 +20,27 @@ namespace Fenix.WebService
 			/// <returns></returns>
 			internal static bool IsWindowsServer()
 			{
-				return OS.IsOS(OS.OS_ANYSERVER);
+				return Os.IsOS(Os.OsAnyserver);
 			}
 
-			private const int OS_ANYSERVER = 29;
+			private const int OsAnyserver = 29;
 
 			[DllImport("shlwapi.dll", SetLastError = true, EntryPoint = "#437")]
 			private static extern bool IsOS(int os);
 		}
 
-		/// <summary>
-		/// Zápis do logovací tabulky AppLogNew
-		/// </summary>
-		/// <param name="authToken"></param>
-		/// <param name="type"></param>
-		/// <param name="message"></param>
-		/// <param name="xmlMessage"></param>
-		/// <param name="zicyzUserID"></param>
-		/// <param name="sourceName"></param>
-		/// <returns></returns>
-		public static SubmitDataToProcessingResult AppLogWrite(AuthToken authToken, string type, string message, string xmlDeclaration, string xmlMessage, int zicyzUserID, string sourceName)								
+	    /// <summary>
+	    /// Zápis do logovací tabulky AppLogNew
+	    /// </summary>
+	    /// <param name="authToken"></param>
+	    /// <param name="type"></param>
+	    /// <param name="message"></param>
+	    /// <param name="xmlDeclaration"></param>
+	    /// <param name="xmlMessage"></param>
+	    /// <param name="zicyzUserId"></param>
+	    /// <param name="sourceName"></param>
+	    /// <returns></returns>
+	    public static SubmitDataToProcessingResult AppLogWrite(AuthToken authToken, string type, string message, string xmlDeclaration, string xmlMessage, int zicyzUserId, string sourceName)								
 		{
 			SubmitDataToProcessingResult result = new SubmitDataToProcessingResult();
 			
@@ -49,12 +50,12 @@ namespace Fenix.WebService
 				{
 					FenixAppSvcClient appClient = new FenixAppSvcClient();
 					appClient.AuthToken = new Fenix.WebService.Service_References.FenixAppService.AuthToken() { Value = authToken.Value };										
-					ProcResult procResult = appClient.AppLogWriteNew(type, message, xmlDeclaration, xmlMessage, zicyzUserID, sourceName);
+					ProcResult procResult = appClient.AppLogWriteNew(type, message, xmlDeclaration, xmlMessage, zicyzUserId, sourceName);
 					appClient.Close();
 
 					if (procResult.ReturnValue == (int)BC.OK)
 					{
-						CreateOKResult(ref result);
+						CreateOkResult(ref result);
 					}
 					else
 					{
@@ -73,39 +74,39 @@ namespace Fenix.WebService
 		/// <summary>
 		/// Vytvoří message pro zápis do tabulky AppLog
 		/// </summary>
-		/// <param name="processingName"></param>
 		/// <param name="partnerCode"></param>
 		/// <param name="messageType"></param>
 		/// <param name="description"></param>
 		/// <returns></returns>
 		public static string CreateAppLogMessage(string partnerCode, string messageType, string description)
 		{			
-			return String.Format("PartnerCode = [{0}] MessageType = [{1}]  {2}", partnerCode, messageType, description);
+			return $"PartnerCode = [{partnerCode}] MessageType = [{messageType}]  {description}";
 		}
 
 		/// <summary>
 		/// Vytvoří result pro OK
 		/// </summary>
 		/// <param name="result"></param>
-		public static void CreateOKResult(ref SubmitDataToProcessingResult result)
+		public static void CreateOkResult(ref SubmitDataToProcessingResult result)
 		{
 			result.MessageNumber = BC.OK;
 			result.MessageDescription = "OK";
 			result.Errors.Add(new Errors { ErrorCode = "0", ErrorMessage = "Success" });
 		}
 
-		/// <summary>
-		/// Vytvoří chybový result
-		/// </summary>
-		/// <param name="result"></param>
-		/// <param name="errorCode">kód chyby</param>
-		/// <param name="ex">vyjímka</param>
-		public static void CreateErrorResult(string methodName, ref SubmitDataToProcessingResult result, string errorCode, Exception ex)
+	    /// <summary>
+	    /// Vytvoří chybový result
+	    /// </summary>
+	    /// <param name="methodName"></param>
+	    /// <param name="result"></param>
+	    /// <param name="errorCode">kód chyby</param>
+	    /// <param name="ex">vyjímka</param>
+	    public static void CreateErrorResult(string methodName, ref SubmitDataToProcessingResult result, string errorCode, Exception ex)
 		{
-			removeOKResult(ref result);
+			RemoveOkResult(ref result);
 
 			result.MessageNumber = BC.NOT_OK;
-			result.MessageDescription = String.Format("ERROR in {0}", methodName);
+			result.MessageDescription = $"ERROR in {methodName}";
 			result.Errors.Add(new Errors { ErrorCode = errorCode, ErrorMessage = ex.Message });
 
 			Exception innerExeption = ex.InnerException;
@@ -115,22 +116,21 @@ namespace Fenix.WebService
 				innerExeption = innerExeption.InnerException;
 			}
 
-			//if (ex.InnerException != null)
-			//	result.Errors.Add(new Errors { ErrorCode = errorCode, ErrorMessage = ex.InnerException.Message });
 		}
 
-		/// <summary>
-		/// Vytvoří chybový result
-		/// </summary>
-		/// <param name="result"></param>
-		/// <param name="errorCode">kód chyby</param>
-		/// <param name="errorMessage">text chyby</param>
-		public static void CreateErrorResult(string methodName, ref SubmitDataToProcessingResult result, string errorCode, string errorMessage)
+	    /// <summary>
+	    /// Vytvoří chybový result
+	    /// </summary>
+	    /// <param name="methodName"></param>
+	    /// <param name="result"></param>
+	    /// <param name="errorCode">kód chyby</param>
+	    /// <param name="errorMessage">text chyby</param>
+	    public static void CreateErrorResult(string methodName, ref SubmitDataToProcessingResult result, string errorCode, string errorMessage)
 		{
-			removeOKResult(ref result);
+			RemoveOkResult(ref result);
 
 			result.MessageNumber = BC.NOT_OK;
-			result.MessageDescription = String.Format("ERROR in {0}", methodName);
+			result.MessageDescription = $"ERROR in {methodName}";
 			result.Errors.Add(new Errors { ErrorCode = errorCode, ErrorMessage = errorMessage });
 		}
 
@@ -160,7 +160,7 @@ namespace Fenix.WebService
 		/// Odstraní OK result (pokud existuje)
 		/// </summary>
 		/// <param name="result">odtud se odstraní OK result</param>
-		private static void removeOKResult(ref SubmitDataToProcessingResult result)
+		private static void RemoveOkResult(ref SubmitDataToProcessingResult result)
 		{
 			if (result.MessageNumber == BC.OK && result.Errors.Count >= 1)
 			{

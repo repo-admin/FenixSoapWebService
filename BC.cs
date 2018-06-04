@@ -1,9 +1,12 @@
-﻿namespace Fenix.WebService
-{
-	#region Enums
-	#endregion
+﻿using System.Diagnostics.CodeAnalysis;
 
-	internal class BC
+namespace Fenix.WebService
+{
+    /// <summary>
+    /// Aplikační konstanty
+    /// </summary>
+	[SuppressMessage("ReSharper", "InconsistentNaming")]
+    internal class BC
 	{
 		internal const string APP_NAMESPACE = "https://fenix.upc.cz";
 
@@ -25,7 +28,5 @@
 		/// </summary>
 		internal const long NOT_OK = OK + 1;
 
-		#region Properties
-		#endregion
 	}
 }

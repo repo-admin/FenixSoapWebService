@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Web.Services;
-using Fenix.WebService.Manually;
 using Fenix.WebService.Processing;
+using Fenix.WebService.Testing;
 
 namespace Fenix.WebService
 {
+    /// <summary>
+    /// Třída přenašející data ke zpracování
+    /// </summary>
 	public class SubmitDataToProcessingResult
 	{
 		public SubmitDataToProcessingResult()
@@ -14,17 +17,32 @@ namespace Fenix.WebService
 			this.Errors = new List<Errors>();
 		}
 
+        /// <summary>
+        /// Seznam chyb <see cref="Errors"/>
+        /// </summary>
 		public List<Errors> Errors { get; set; }
+        /// <summary>
+        /// číslo zprávy
+        /// </summary>
 		public long MessageNumber { get; set; }
+        /// <summary>
+        /// Popis
+        /// </summary>
 		public string MessageDescription { get; set; }
 	}
 
+    /// <summary>
+    /// Chyba
+    /// </summary>
 	public class Errors
 	{
 		public string ErrorCode { get; set; }
 		public string ErrorMessage { get; set; }
 	}
 
+    /// <summary>
+    /// Jednoduchý výsledek
+    /// </summary>
 	public class SimpleResult
 	{
 		public int Number { get; set; }
@@ -98,7 +116,7 @@ namespace Fenix.WebService
 			
 			try
 			{
-				if (ProjectHelper.OS.IsWindowsServer() || System.Web.Configuration.WebConfigurationManager.AppSettings["DebugMode"] != "1")				
+				if (ProjectHelper.Os.IsWindowsServer() || System.Web.Configuration.WebConfigurationManager.AppSettings["DebugMode"] != "1")				
 				{
 					throw new Exception("TSubmitDataToProcessing Exception");
 				}

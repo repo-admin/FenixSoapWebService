@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Fenix.WebService.Manually
+namespace Fenix.WebService.Testing
 {
 	/// <summary>
 	/// Pomocná třída pro testování - ruční vytvoření K1 (Kitting Confirmation)

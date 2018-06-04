@@ -44,10 +44,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FenixHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\FenixHelper\obj\Debug\FenixHelper.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
@@ -96,13 +92,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Manually\CrmOrderApprovalManually.cs" />
-    <Compile Include="Manually\CrmOrderConfirmationManually.cs" />
-    <Compile Include="Manually\RefurbishedConfirmationManually.cs" />
-    <Compile Include="Manually\ReturnedEquipmentManually.cs" />
-    <Compile Include="Manually\ReturnedItemManually.cs" />
-    <Compile Include="Manually\ReturnedShipmentManually.cs" />
-    <Compile Include="Manually\ShipmentOrderManually.cs" />
+    <Compile Include="Testing\CrmOrderApprovalManually.cs" />
+    <Compile Include="Testing\CrmOrderConfirmationManually.cs" />
+    <Compile Include="Testing\RefurbishedConfirmationManually.cs" />
+    <Compile Include="Testing\ReturnedEquipmentManually.cs" />
+    <Compile Include="Testing\ReturnedItemManually.cs" />
+    <Compile Include="Testing\ReturnedShipmentManually.cs" />
+    <Compile Include="Testing\ShipmentOrderManually.cs" />
     <Compile Include="Processing\ServicesStatusesProcessing.cs" />
     <Compile Include="ProjectHelper.cs" />
     <Compile Include="AppSvcClient.cs" />
@@ -111,16 +107,16 @@
     <Compile Include="FenixSoapWebSvc.asmx.cs">
       <DependentUpon>FenixSoapWebSvc.asmx</DependentUpon>
     </Compile>
-    <Compile Include="Manually\KittingConfirmationManually.cs" />
+    <Compile Include="Testing\KittingConfirmationManually.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Processing\MessageProcessing.cs" />
-    <Compile Include="Manually\ReceptionConfirmationManually.cs" />
+    <Compile Include="Testing\ReceptionConfirmationManually.cs" />
     <Compile Include="Service References\FenixAppService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Manually\TestManually.cs" />
+    <Compile Include="Testing\TestManually.cs" />
     <Compile Include="Processing\TestProcessing.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -136,6 +132,12 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\FenixAppService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FenixHelper\FenixHelper.csproj">
+      <Project>{7685fa4c-d022-4cc0-b5f3-6d4354ef8c9c}</Project>
+      <Name>FenixHelper</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

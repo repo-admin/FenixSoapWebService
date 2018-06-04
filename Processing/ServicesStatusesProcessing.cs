@@ -8,17 +8,16 @@ namespace Fenix.WebService.Processing
 	/// </summary>
 	public class ServicesStatusesProcessing
 	{
-		/// <summary>
-		/// Volání SP pro ověření 'zdraví služeb'
-		/// </summary>
-		/// <param name="login"></param>
-		/// <param name="password"></param>
-		/// <param name="partnerCode"></param>
-		/// <param name="messageType"></param>
-		/// <param name="xmlString"></param>
-		/// <param name="encoding"></param>  
-		/// <returns>result.MessageDescription by měla obsahovat string 'Automat Rows : 1  |   DateTime : yyyy-mm-dd hh:mi:ss.mmm'</returns>
-		public static SubmitDataToProcessingResult Process(AuthToken authToken, string login, string password, string partnerCode, string messageType)
+	    /// <summary>
+	    /// Volání SP pro ověření 'zdraví služeb'
+	    /// </summary>
+	    /// <param name="authToken"></param>
+	    /// <param name="login"></param>
+	    /// <param name="password"></param>
+	    /// <param name="partnerCode"></param>
+	    /// <param name="messageType"></param>
+	    /// <returns>result.MessageDescription by měla obsahovat string 'Automat Rows : 1  |   DateTime : yyyy-mm-dd hh:mi:ss.mmm'</returns>
+	    public static SubmitDataToProcessingResult Process(AuthToken authToken, string login, string password, string partnerCode, string messageType)
 		{
 			SubmitDataToProcessingResult result = new SubmitDataToProcessingResult();
 

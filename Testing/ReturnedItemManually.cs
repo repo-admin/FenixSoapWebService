@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Fenix.WebService.Manually
+namespace Fenix.WebService.Testing
 {
 	/// <summary>
 	/// Hardcoded vytvoření vratky itemů ze strany ND - message VR2 (Returned Item)

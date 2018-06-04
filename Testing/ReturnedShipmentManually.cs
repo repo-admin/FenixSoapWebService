@@ -1,19 +1,19 @@
 ﻿using System;
 
-namespace Fenix.WebService.Manually
+namespace Fenix.WebService.Testing
 {
 	/// <summary>
 	/// Hardcoded vytvoření vratky ze strany ND - message VR3
 	/// </summary>
 	public class ReturnedShipmentManually
 	{
-		/// <summary>
-		/// Vrací XML string pro VR3 (vratka - odvoz na repasi)
-		/// tohle message generuje ND samo o sobe = nepredchazi zadana message od nas
-		/// </summary>
-		/// <param name="orderId"></param>
-		/// <returns></returns>
-		public static string GetReturnedShipment(int returnedId)
+        /// <summary>
+        /// Vrací XML string pro VR3 (vratka - odvoz na repasi)
+        /// tohle message generuje ND samo o sobe = nepredchazi zadana message od nas
+        /// </summary>
+        /// <param name="returnedId"></param>
+        /// <returns></returns>
+        public static string GetReturnedShipment(int returnedId)
 		{			
 			string xmlString = String.Empty;
 

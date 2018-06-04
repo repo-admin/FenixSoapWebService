@@ -1,18 +1,18 @@
 ﻿using System;
 
-namespace Fenix.WebService.Manually
+namespace Fenix.WebService.Testing
 {
 	/// <summary>
 	/// Hardcoded vytvoření potvrzení naskladnění repasovaného zboží ze strany ND - RefurbishedConfirmation message RF1
 	/// </summary>
 	public class RefurbishedConfirmationManually
 	{
-		/// <summary>
-		/// Vrací hardcoded XML string pro RF1 (repase - potvrzení naskladnění repasovaného zboží ze strany ND)		
-		/// </summary>
-		/// <param name="orderId"></param>
-		/// <returns></returns>
-		public static string GetRefurbishedConfirmation(int confirmationId)
+        /// <summary>
+        /// Vrací hardcoded XML string pro RF1 (repase - potvrzení naskladnění repasovaného zboží ze strany ND)		
+        /// </summary>
+        /// <param name="confirmationId"></param>
+        /// <returns></returns>
+        public static string GetRefurbishedConfirmation(int confirmationId)
 		{
 			string xmlString = String.Empty;
 
